@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bhli5qu07p2tg"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bhli5qu07p2tg"]
 
 [ext_resource type="Script" path="res://Scenes/EnemyType.gd" id="1_avc0w"]
+[ext_resource type="Script" path="res://Scenes/PickUpResource.gd" id="1_ci16l"]
 [ext_resource type="Texture2D" uid="uid://dqlqq6wnerdmp" path="res://assets/RPG Battlers 3/5 v1.png" id="2_bsrxw"]
+[ext_resource type="Resource" uid="uid://c2cm1dupaxml0" path="res://Resources/PickUps/Blue Gem.tres" id="2_qtmo2"]
 
 [resource]
 script = ExtResource("1_avc0w")
@@ -9,3 +11,4 @@ title = "Ghost"
 texture = ExtResource("2_bsrxw")
 health = 3.0
 damage = 7.0
+drops = Array[ExtResource("1_ci16l")]([ExtResource("2_qtmo2")])

@@ -1,8 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=17 format=3 uid="uid://dkt7spcbw3ubw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
+[ext_resource type="Texture2D" uid="uid://dtscbbwoox4tt" path="res://assets/PickUps/xp_small.png" id="2_r0tpp"]
 [ext_resource type="PackedScene" uid="uid://b1wxc1sicangf" path="res://Scenes/slot.tscn" id="2_yfing"]
 [ext_resource type="Resource" uid="uid://ba768tc60563q" path="res://Resources/Weapons/magicWand.tres" id="3_iyfsy"]
+[ext_resource type="Texture2D" uid="uid://bmqb5qg0q4w7t" path="res://assets/GUI.png" id="4_1ay7x"]
+[ext_resource type="Script" path="res://Scenes/options.gd" id="5_rup4h"]
+
+[sub_resource type="Gradient" id="Gradient_iccrq"]
+offsets = PackedFloat32Array(0.003003, 1)
+colors = PackedColorArray(0.925353, 0.925353, 0.925353, 0.6, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3otik"]
+gradient = SubResource("Gradient_iccrq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yivi0"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 1, 1)
+angle_min = -235.8
+angle_max = 224.8
+gravity = Vector3(0, 98, 0)
+color_ramp = SubResource("GradientTexture1D_3otik")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4op4w"]
+atlas = ExtResource("4_1ay7x")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyv71"]
+atlas = ExtResource("4_1ay7x")
+region = Rect2(135, 4, 45, 7)
+margin = Rect2(2, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u840s"]
+atlas = ExtResource("4_1ay7x")
+region = Rect2(67, 4, 48, 10)
+margin = Rect2(-2, 0, 0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_keiu4"]
 size = Vector2(20, 20)
@@ -11,11 +44,50 @@ size = Vector2(20, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb6uv"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_umqv7"]
+radius = 50.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-2, 0)
 script = ExtResource("1_dgp2d")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Particle" type="GPUParticles2D" parent="UI"]
+process_mode = 3
+visible = false
+position = Vector2(571, 32)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_yivi0")
+texture = ExtResource("2_r0tpp")
+lifetime = 1.5
+
+[node name="Panel" type="NinePatchRect" parent="UI"]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -139.0
+offset_right = 356.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_4op4w")
+region_rect = Rect2(5, 0, 37, 32)
+
+[node name="Label" type="Label" parent="UI/Panel"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 49.0
+offset_right = 417.0
+offset_bottom = 77.0
+text = "Level UP"
+horizontal_alignment = 1
+uppercase = true
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
 offset_right = 40.0
@@ -30,6 +102,48 @@ layout_mode = 2
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_yfing")]
 layout_mode = 2
+
+[node name="XP" type="TextureProgressBar" parent="UI"]
+unique_name_in_owner = true
+offset_left = 724.0
+offset_top = 7.0
+offset_right = 769.0
+offset_bottom = 45.0
+scale = Vector2(9, 4)
+max_value = 10.0
+texture_under = SubResource("AtlasTexture_yyv71")
+texture_progress = SubResource("AtlasTexture_u840s")
+
+[node name="Level" type="Label" parent="UI/XP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 35.7778
+offset_top = 8.0
+offset_right = 76.7778
+offset_bottom = 35.0
+scale = Vector2(0.2, 0.2)
+text = "LVL 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "particles", "panel")]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_rup4h")
+weapons = NodePath("../Weapons")
+particles = NodePath("../Particle")
+panel = NodePath("../Panel")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_keiu4")
@@ -59,5 +173,15 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Magnet" type="Area2D" parent="."]
+position = Vector2(96, 5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
+position = Vector2(-93, -4)
+shape = SubResource("CircleShape2D_umqv7")
+
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Magnet" to="." method="_on_magnet_area_entered"]
