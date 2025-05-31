@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bhli5qu07p2tg"]
+
+[ext_resource type="Script" path="res://EnemyType.gd" id="1_avc0w"]
+[ext_resource type="Texture2D" uid="uid://dqlqq6wnerdmp" path="res://assets/RPG Battlers 3/5 v1.png" id="2_bsrxw"]
+
+[resource]
+script = ExtResource("1_avc0w")
+title = "Ghost"
+texture = ExtResource("2_bsrxw")
+health = 0.0
+damage = 7.0

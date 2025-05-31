@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b0lpmitklcm6s"]
+
+[ext_resource type="Shader" path="res://shaders/rainbow_outline.gdshader" id="1_h1c2u"]
+
+[resource]
+shader = ExtResource("1_h1c2u")
+shader_parameter/line_thickness = 1.0
+shader_parameter/sin_frequency = 0.3
+shader_parameter/sin_offset = 0.0
+shader_parameter/light_offset = 0.5
