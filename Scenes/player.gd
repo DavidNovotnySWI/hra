@@ -14,10 +14,16 @@ var level : int = 1:
 		level = value
 		%Level.text = str(value)
 		%Options.show_option()
-		if level >= 2:
+		if level == 2:
 			%XP.max_value = 20
-		elif level >= 7:
+		elif level == 3:
 			%XP.max_value = 40
+		elif level == 4:
+			%XP.max_value = 80
+		elif level == 5:
+			%XP.max_value = 100
+		elif level >= 6:
+			%XP.max_value = 120
 var XP : int = 0:
 	set(value):
 		XP = value
