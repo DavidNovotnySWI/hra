@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=7 format=3 uid="uid://dkt7spcbw3ubw"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_dgp2d"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
+[ext_resource type="PackedScene" uid="uid://b1wxc1sicangf" path="res://Scenes/slot.tscn" id="2_yfing"]
+[ext_resource type="Resource" uid="uid://ba768tc60563q" path="res://Resources/Weapons/magicWand.tres" id="3_iyfsy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_keiu4"]
 size = Vector2(20, 20)
@@ -12,6 +14,22 @@ size = Vector2(20, 20)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-2, 0)
 script = ExtResource("1_dgp2d")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Weapons" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" parent="UI/Weapons" instance=ExtResource("2_yfing")]
+layout_mode = 2
+weapon = ExtResource("3_iyfsy")
+
+[node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_yfing")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_yfing")]
+layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_keiu4")

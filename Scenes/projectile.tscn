@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://rxaqqrxqq8ri"]
+
+[ext_resource type="Script" path="res://Scenes/projectile.gd" id="1_7dbm3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rxyh6"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adrvh"]
+size = Vector2(10, 10)
+
+[sub_resource type="Gradient" id="Gradient_r8fvy"]
+offsets = PackedFloat32Array(0, 0.955128, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.955128, 0.955128, 0.955128, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g3xii"]
+gradient = SubResource("Gradient_r8fvy")
+
+[sub_resource type="Gradient" id="Gradient_jvguw"]
+offsets = PackedFloat32Array(0, 0.935897, 0.987179)
+colors = PackedColorArray(0.889, 0, 0.853, 0.903, 0.421, 0.318, 0.919, 0.784, 0.291, 0.359, 0.911, 0.952)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bf7ts"]
+gradient = SubResource("Gradient_jvguw")
+
+[sub_resource type="Curve" id="Curve_nk3mt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5f8li"]
+curve = SubResource("Curve_nk3mt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p3g35"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = -10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_5f8li")
+color_ramp = SubResource("GradientTexture1D_bf7ts")
+color_initial_ramp = SubResource("GradientTexture1D_g3xii")
+turbulence_enabled = true
+turbulence_influence_max = 0.281
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_7dbm3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_rxyh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_adrvh")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_p3g35")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
