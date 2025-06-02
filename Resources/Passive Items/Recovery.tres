@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://1viu1dmr71kd"]
+
+[ext_resource type="Script" path="res://Scenes/PassiveItem.gd" id="1_0v20a"]
+[ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="2_2mo3j"]
+[ext_resource type="Script" path="res://Scenes/Stats.gd" id="3_vcovb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmp6g"]
+atlas = ExtResource("2_2mo3j")
+region = Rect2(256, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_1jt2w"]
+script = ExtResource("3_vcovb")
+description = "+0.2 Health/sec"
+max_health = 0.0
+recovery = 0.2
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_dcj8p"]
+script = ExtResource("3_vcovb")
+description = "+0.4 Health/sec"
+max_health = 0.0
+recovery = 0.4
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_fab8o"]
+script = ExtResource("3_vcovb")
+description = "+0.6 Health/sec"
+max_health = 0.0
+recovery = 0.6
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_0v20a")
+upgrades = Array[ExtResource("3_vcovb")]([SubResource("Resource_1jt2w"), SubResource("Resource_dcj8p"), SubResource("Resource_fab8o")])
+title = "Recovery"
+texture = SubResource("AtlasTexture_qmp6g")

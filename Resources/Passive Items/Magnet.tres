@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://d0ghybqa1msyp"]
+
+[ext_resource type="Script" path="res://Scenes/PassiveItem.gd" id="1_jugbg"]
+[ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="2_7iif1"]
+[ext_resource type="Script" path="res://Scenes/Stats.gd" id="3_r7rog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ohsg"]
+atlas = ExtResource("2_7iif1")
+region = Rect2(579, 2820, 56, 55)
+
+[sub_resource type="Resource" id="Resource_4sxwk"]
+script = ExtResource("3_r7rog")
+description = "+15 Magner Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 15.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_fbvbw"]
+script = ExtResource("3_r7rog")
+description = "+20 Magnet Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 20.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_ln3mb"]
+script = ExtResource("3_r7rog")
+description = "+25 Magnet Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 25.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_jugbg")
+upgrades = Array[ExtResource("3_r7rog")]([SubResource("Resource_4sxwk"), SubResource("Resource_fbvbw"), SubResource("Resource_ln3mb")])
+title = "Magnet"
+texture = SubResource("AtlasTexture_1ohsg")

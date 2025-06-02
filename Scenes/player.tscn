@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=26 format=3 uid="uid://dkt7spcbw3ubw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
 [ext_resource type="Texture2D" uid="uid://dtscbbwoox4tt" path="res://assets/PickUps/xp_small.png" id="2_r0tpp"]
@@ -6,6 +6,15 @@
 [ext_resource type="Resource" uid="uid://ba768tc60563q" path="res://Resources/Weapons/magicWand.tres" id="3_iyfsy"]
 [ext_resource type="Texture2D" uid="uid://bmqb5qg0q4w7t" path="res://assets/GUI.png" id="4_1ay7x"]
 [ext_resource type="Script" path="res://Scenes/options.gd" id="5_rup4h"]
+[ext_resource type="Resource" uid="uid://d0ghybqa1msyp" path="res://Resources/Passive Items/Magnet.tres" id="7_5e1bo"]
+[ext_resource type="PackedScene" uid="uid://c4ehd05fj2dlw" path="res://Scenes/passive_slot.tscn" id="7_6p7tc"]
+[ext_resource type="Resource" uid="uid://de3rlocxrsye" path="res://Resources/Passive Items/Max Heath.tres" id="8_a38sc"]
+[ext_resource type="Resource" uid="uid://omtqawo32qkk" path="res://Resources/Passive Items/Movement Speed.tres" id="9_us2l2"]
+[ext_resource type="Resource" uid="uid://1viu1dmr71kd" path="res://Resources/Passive Items/Recovery.tres" id="10_geit3"]
+[ext_resource type="Resource" uid="uid://djef8egp4sj5i" path="res://Resources/Passive Items/Armor.tres" id="11_6jmsj"]
+[ext_resource type="Resource" uid="uid://cjg54vb44l700" path="res://Resources/Passive Items/Might.tres" id="12_rdmsp"]
+[ext_resource type="Resource" uid="uid://c5vfv7j64phtw" path="res://Resources/Passive Items/AttackRange.tres" id="13_dp6ui"]
+[ext_resource type="Resource" uid="uid://crltcvdipt3ox" path="res://Resources/Passive Items/Growth.tres" id="14_23x0u"]
 
 [sub_resource type="Gradient" id="Gradient_iccrq"]
 offsets = PackedFloat32Array(0.003003, 1)
@@ -53,7 +62,7 @@ script = ExtResource("1_dgp2d")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Particle" type="GPUParticles2D" parent="UI"]
+[node name="LevelUPAnimation" type="GPUParticles2D" parent="UI"]
 process_mode = 3
 visible = false
 position = Vector2(571, 32)
@@ -94,7 +103,7 @@ offset_bottom = 40.0
 
 [node name="Slot" parent="UI/Weapons" instance=ExtResource("2_yfing")]
 layout_mode = 2
-weapon = ExtResource("3_iyfsy")
+item = ExtResource("3_iyfsy")
 
 [node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_yfing")]
 layout_mode = 2
@@ -102,13 +111,50 @@ layout_mode = 2
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_yfing")]
 layout_mode = 2
 
+[node name="PassiveItems" type="HBoxContainer" parent="UI"]
+offset_top = 44.0
+offset_right = 128.0
+offset_bottom = 84.0
+
+[node name="PassiveSlot" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("7_5e1bo")
+
+[node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("8_a38sc")
+
+[node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("9_us2l2")
+
+[node name="PassiveSlot4" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("10_geit3")
+
+[node name="PassiveSlot5" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("11_6jmsj")
+
+[node name="PassiveSlot6" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("12_rdmsp")
+
+[node name="PassiveSlot7" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("13_dp6ui")
+
+[node name="PassiveSlot8" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
+layout_mode = 2
+item = ExtResource("14_23x0u")
+
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
-offset_left = 724.0
-offset_top = 7.0
-offset_right = 769.0
-offset_bottom = 45.0
-scale = Vector2(9, 4)
+offset_left = 915.0
+offset_top = 8.0
+offset_right = 960.0
+offset_bottom = 41.0
+scale = Vector2(5, 4)
 max_value = 10.0
 texture_under = SubResource("AtlasTexture_yyv71")
 texture_progress = SubResource("AtlasTexture_u840s")
@@ -125,23 +171,24 @@ text = "LVL 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "particles", "panel")]
+[node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.537
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.537
 offset_left = -20.0
-offset_top = -20.0
+offset_top = -19.976
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 20.024
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_rup4h")
 weapons = NodePath("../Weapons")
-particles = NodePath("../Particle")
+passive_items = NodePath("../PassiveItems")
+particles = NodePath("../LevelUPAnimation")
 panel = NodePath("../Panel")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -177,7 +224,8 @@ position = Vector2(96, 5)
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
+[node name="Magnet" type="CollisionShape2D" parent="Magnet"]
+unique_name_in_owner = true
 position = Vector2(-93, -4)
 shape = SubResource("CircleShape2D_umqv7")
 

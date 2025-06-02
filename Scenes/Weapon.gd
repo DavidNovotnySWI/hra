@@ -1,17 +1,15 @@
-extends Resource
+extends Item
 class_name Weapon
- 
-@export var title : String
-@export var texture : Texture2D
  
 @export var damage : float
 @export var cooldown : float
 @export var speed : float
- 
 @export var projectile_node : PackedScene = preload("res://Scenes/projectile.tscn")
-
 @export var upgrades : Array[Upgrade]
-var level = 1
+@export var item_needed: PassiveItem
+@export var evolution: Weapon
+
+var slot
  
 func activate(_source, _target, _scene_tree):
 	pass
@@ -31,3 +29,8 @@ func upgrade_item():
 	cooldown += upgrade.cooldown
 	
 	level +=1
+	
+func max_level_reached():
+	if upgrades.size() +1 == level and upgrades.size() != 0:
+		return true
+	return false

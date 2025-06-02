@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=6 format=3 uid="uid://6apljwd80on5"]
+
+[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/projectile.tscn" id="1_sqg48"]
+[ext_resource type="Script" path="res://Scenes/Weapon.gd" id="2_3dd38"]
+[ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="3_thaon"]
+[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_26ioc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vfdl"]
+atlas = ExtResource("3_thaon")
+region = Rect2(960, 6784, 64, 64)
+
+[resource]
+script = ExtResource("2_3dd38")
+damage = 10.0
+cooldown = 0.1
+speed = 500.0
+projectile_node = ExtResource("1_sqg48")
+upgrades = Array[ExtResource("4_26ioc")]([])
+title = "Holy Wand"
+texture = SubResource("AtlasTexture_3vfdl")

@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://cjg54vb44l700"]
+
+[ext_resource type="Script" path="res://Scenes/PassiveItem.gd" id="1_r7coe"]
+[ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="2_8y8fb"]
+[ext_resource type="Script" path="res://Scenes/Stats.gd" id="3_cisvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl3fs"]
+atlas = ExtResource("2_8y8fb")
+region = Rect2(0, 2432, 64, 64)
+
+[sub_resource type="Resource" id="Resource_brfub"]
+script = ExtResource("3_cisvm")
+description = "+10% Increased Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.1
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_j4rqf"]
+script = ExtResource("3_cisvm")
+description = "+20% Increased Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.2
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_05em7"]
+script = ExtResource("3_cisvm")
+description = "+30% Increased Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.3
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_r7coe")
+upgrades = Array[ExtResource("3_cisvm")]([SubResource("Resource_brfub"), SubResource("Resource_j4rqf"), SubResource("Resource_05em7")])
+title = "Might"
+texture = SubResource("AtlasTexture_gl3fs")

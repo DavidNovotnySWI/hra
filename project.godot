@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 folder_colors={
 "res://Resources/": "blue",
 "res://Resources/Enemies/": "red",
+"res://Resources/Passive Items/": "orange",
 "res://Resources/PickUps/": "green",
 "res://shaders/": "red"
 }
