@@ -76,6 +76,10 @@ func drop_item():
 	
 	var item = type.drops.pick_random()
 	
+	# z elite monster padaji goldy
+	if elite:
+		item = load("res://Resources/PickUps/Gold.tres")
+		
 	var item_to_drop = drop.instantiate()
 	
 	item_to_drop.type = item
@@ -83,4 +87,5 @@ func drop_item():
 	item_to_drop.player_reference = player_reference
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
+	queue_free()
 	

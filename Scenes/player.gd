@@ -22,7 +22,7 @@ var magnet : float  = 0:
 var growth : float = 1
 
 
-var nearest_enemy : CharacterBody2D
+var nearest_enemy
 var nearest_enemy_distance : float = 150 + area
  
 var level : int = 1:
@@ -40,6 +40,12 @@ var level : int = 1:
 			%XP.max_value = 10
 		elif level >= 6:
 			%XP.max_value = 10
+
+var gold : int = 0:
+	set(value):
+		gold = value
+		%Gold.text = "Gold: " + str(value)
+	
 var XP : int = 0:
 	set(value):
 		XP = value
@@ -83,6 +89,9 @@ func _on_self_damage_body_entered(body):
 func _on_magnet_area_entered(area):
 	if area.has_method("follow"):
 		area.follow(self)
+
+func gain_gold(amount):
+	gold += amount
 		
 func _update_animation(dir: Vector2) -> void:
 	# 1) Smrt

@@ -2,9 +2,10 @@ extends Weapon
 class_name SingleShot
  
 func shoot(source, target, scene_tree):
-	if target == null:
+	if target == null or scene_tree.paused == true:
 		return
  
+	SoundManager.play_sfx(sound)
 	var projectile = projectile_node.instantiate()
  
 	projectile.position = source.position

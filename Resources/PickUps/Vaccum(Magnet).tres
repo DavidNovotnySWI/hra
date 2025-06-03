@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PickupMagnet" load_steps=4 format=3 uid="uid://c6r5dum6x4c2c"]
+
+[ext_resource type="Texture2D" uid="uid://gf7mw2xxsi7" path="res://assets/32x32.png" id="1_k8n06"]
+[ext_resource type="Script" path="res://Scenes/Vaccum.gd" id="2_vrm4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qsi3"]
+atlas = ExtResource("1_k8n06")
+region = Rect2(288, 1312, 32, 32)
+
+[resource]
+script = ExtResource("2_vrm4k")
+title = "Vaccum"
+icon = SubResource("AtlasTexture_7qsi3")
+description = "Suck up all the gems"

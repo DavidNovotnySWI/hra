@@ -54,7 +54,7 @@ func show_option():
 
 		# Pokud je dosaženo max levelu a je potřeba pasivka, přidej "evoluční" nabídku
 		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
-			all_options.append(weapon) # případně sem můžeš dát kopii jiného Item typu
+			all_options.append(weapon)
 
 	# 2. Pasivní předměty, které lze vylepšit
 	for passive_item in passive_item_available:

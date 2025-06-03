@@ -23,5 +23,9 @@ func _physics_process(delta):
 		direction = (player_reference.position - position).normalized()
 		position += direction * speed * delta
  
-func follow(_target : CharacterBody2D):
+func follow(_target : CharacterBody2D, gem_flag = false):
+	if gem_flag == true:
+		if type is Gem:
+			can_follow = true
+		return
 	can_follow = true

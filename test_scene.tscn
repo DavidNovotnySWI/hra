@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dni8y7anjey3s"]
+[gd_scene load_steps=23 format=4 uid="uid://dni8y7anjey3s"]
 
 [ext_resource type="Texture2D" uid="uid://b10etw6ario2x" path="res://assets/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_7m8fd"]
 [ext_resource type="PackedScene" uid="uid://dkt7spcbw3ubw" path="res://Scenes/player.tscn" id="1_sd3yr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://ddexu76ipsi2e" path="res://Resources/Enemies/EyeLegs.tres" id="5_xl5me"]
 [ext_resource type="Resource" uid="uid://bhli5qu07p2tg" path="res://Resources/Enemies/Ghost.tres" id="6_mgvxb"]
 [ext_resource type="Resource" uid="uid://dxrc471wgw21u" path="res://Resources/Enemies/Triple.tres" id="7_cvoae"]
+[ext_resource type="PackedScene" uid="uid://dxwslqh2ywj54" path="res://Scenes/destructible.tscn" id="14_unb2j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hcpg"]
 texture = ExtResource("1_7m8fd")
@@ -511,3 +512,10 @@ enemy_types = Array[ExtResource("2_x84wo")]([ExtResource("3_pwd85"), ExtResource
 
 [node name="Player" parent="." instance=ExtResource("1_sd3yr")]
 position = Vector2(575, 342)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.347114, 0.307668, 0.492637, 1)
+blend_mode = 2
+
+[node name="Destructible" parent="." instance=ExtResource("14_unb2j")]
+position = Vector2(1014, 353)
