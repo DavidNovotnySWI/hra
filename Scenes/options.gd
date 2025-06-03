@@ -36,27 +36,43 @@ func add_option(item) -> int:
 func show_option():
 	var weapons_available = get_available_resource_in(weapons)
 	var passive_item_available = get_available_resource_in(passive_items)
-	if weapons_available.size() == 0 and passive_item_available.size() == 0:
+
+	if weapons_available.is_empty() and passive_item_available.is_empty():
 		return
- 
+
+	# Vyčisti předchozí volby
 	for slot in get_children():
 		slot.queue_free()
- 
-	var option_size = 0
+
+	# Seznam všech možností, které lze nabídnout
+	var all_options : Array[Item] = []
+
+	# 1. Zbraně, které lze vylepšit
 	for weapon in weapons_available:
-		option_size += add_option(weapon)
- 
+		if weapon.is_upgradable():
+			all_options.append(weapon)
+
+		# Pokud je dosaženo max levelu a je potřeba pasivka, přidej "evoluční" nabídku
 		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
-			var option_slot = OptionSlot.instantiate()
-			option_slot.item = weapon
-			add_child(option_slot)
-			option_size += 1
- 
+			all_options.append(weapon) # případně sem můžeš dát kopii jiného Item typu
+
+	# 2. Pasivní předměty, které lze vylepšit
 	for passive_item in passive_item_available:
-		option_size += add_option(passive_item)
- 
-	if option_size == 0:
+		if passive_item.is_upgradable():
+			all_options.append(passive_item)
+
+	if all_options.is_empty():
 		return
+
+	# Zamíchej možnosti a vezmi max 3
+	all_options.shuffle()
+	var final_options = all_options.slice(0, min(3, all_options.size()))
+
+	# Přidej do UI
+	for item in final_options:
+		var option_slot = OptionSlot.instantiate()
+		option_slot.item = item
+		add_child(option_slot)
 		
 	show()
 	particles.show()

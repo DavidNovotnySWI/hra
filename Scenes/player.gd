@@ -1,5 +1,6 @@
 extends CharacterBody2D
- 
+@onready var anim := $AnimatedSprite2D
+
 var health : float = 100.0 :
 	set(value):
 		health = max(value,0)
@@ -30,15 +31,15 @@ var level : int = 1:
 		%Level.text = str(value)
 		%Options.show_option()
 		if level == 2:
-			%XP.max_value = 20
+			%XP.max_value = 10
 		elif level == 3:
-			%XP.max_value = 40
+			%XP.max_value = 10
 		elif level == 4:
-			%XP.max_value = 80
+			%XP.max_value = 10
 		elif level == 5:
-			%XP.max_value = 100
+			%XP.max_value = 10
 		elif level >= 6:
-			%XP.max_value = 120
+			%XP.max_value = 10
 var XP : int = 0:
 	set(value):
 		XP = value
@@ -54,6 +55,7 @@ func _physics_process(delta):
 		nearest_enemy = null
 	velocity = Input.get_vector("left","right","up","down") * movement_speed
 	move_and_collide(velocity * delta)
+	_update_animation(velocity)
 	check_XP()
 	health += recovery * delta
  
@@ -81,3 +83,21 @@ func _on_self_damage_body_entered(body):
 func _on_magnet_area_entered(area):
 	if area.has_method("follow"):
 		area.follow(self)
+		
+func _update_animation(dir: Vector2) -> void:
+	# 1) Smrt
+	#if health <= 0:
+	#	anim.play("death")
+	#	return
+
+	# 2) Nehýbu-li se → idle ve správném natočení
+	if dir == Vector2.ZERO:
+		anim.play("idle")
+		return
+
+	if abs(dir.x) > abs(dir.y):
+		anim.play("walk_right")                 # vždy stejné klipy
+		anim.flip_h = dir.x < 0                 # zrcadlit pro ←
+		anim.flip_v = false
+	else:
+		anim.play("walk_up")                    # stejné klipy

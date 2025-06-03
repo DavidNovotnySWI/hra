@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=33 format=3 uid="uid://dkt7spcbw3ubw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
 [ext_resource type="Texture2D" uid="uid://dtscbbwoox4tt" path="res://assets/PickUps/xp_small.png" id="2_r0tpp"]
@@ -8,13 +8,9 @@
 [ext_resource type="Script" path="res://Scenes/options.gd" id="5_rup4h"]
 [ext_resource type="Resource" uid="uid://d0ghybqa1msyp" path="res://Resources/Passive Items/Magnet.tres" id="7_5e1bo"]
 [ext_resource type="PackedScene" uid="uid://c4ehd05fj2dlw" path="res://Scenes/passive_slot.tscn" id="7_6p7tc"]
-[ext_resource type="Resource" uid="uid://de3rlocxrsye" path="res://Resources/Passive Items/Max Heath.tres" id="8_a38sc"]
-[ext_resource type="Resource" uid="uid://omtqawo32qkk" path="res://Resources/Passive Items/Movement Speed.tres" id="9_us2l2"]
-[ext_resource type="Resource" uid="uid://1viu1dmr71kd" path="res://Resources/Passive Items/Recovery.tres" id="10_geit3"]
 [ext_resource type="Resource" uid="uid://djef8egp4sj5i" path="res://Resources/Passive Items/Armor.tres" id="11_6jmsj"]
-[ext_resource type="Resource" uid="uid://cjg54vb44l700" path="res://Resources/Passive Items/Might.tres" id="12_rdmsp"]
 [ext_resource type="Resource" uid="uid://c5vfv7j64phtw" path="res://Resources/Passive Items/AttackRange.tres" id="13_dp6ui"]
-[ext_resource type="Resource" uid="uid://crltcvdipt3ox" path="res://Resources/Passive Items/Growth.tres" id="14_23x0u"]
+[ext_resource type="Texture2D" uid="uid://6chbxdxyrq8o" path="res://assets/character/character.png" id="16_i2k84"]
 
 [sub_resource type="Gradient" id="Gradient_iccrq"]
 offsets = PackedFloat32Array(0.003003, 1)
@@ -46,8 +42,105 @@ atlas = ExtResource("4_1ay7x")
 region = Rect2(67, 4, 48, 10)
 margin = Rect2(-2, 0, 0, 0)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_keiu4"]
-size = Vector2(20, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry7tg"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n83ek"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysulr"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t45p0"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omr3y"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qppw"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7huu"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx4qk"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdq2g"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k43ty"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrs2x"]
+atlas = ExtResource("16_i2k84")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0g2ii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry7tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n83ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysulr")
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t45p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omr3y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qppw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7huu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx4qk")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdq2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k43ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrs2x")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6nkj"]
 
@@ -122,31 +215,26 @@ item = ExtResource("7_5e1bo")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("8_a38sc")
+item = ExtResource("11_6jmsj")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("9_us2l2")
+item = ExtResource("13_dp6ui")
 
 [node name="PassiveSlot4" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("10_geit3")
 
 [node name="PassiveSlot5" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("11_6jmsj")
 
 [node name="PassiveSlot6" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("12_rdmsp")
 
 [node name="PassiveSlot7" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("13_dp6ui")
 
 [node name="PassiveSlot8" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("14_23x0u")
 
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
@@ -191,8 +279,9 @@ passive_items = NodePath("../PassiveItems")
 particles = NodePath("../LevelUPAnimation")
 panel = NodePath("../Panel")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_keiu4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0g2ii")
+animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l6nkj")
