@@ -1,0 +1,470 @@
+[gd_scene load_steps=45 format=3 uid="uid://eq1ikkjd2ymy"]
+
+[ext_resource type="PackedScene" uid="uid://disbhycexre2v" path="res://Scenes/upgrade.tscn" id="1_b2xfp"]
+[ext_resource type="Script" path="res://Scenes/skill_tree.gd" id="1_r81yp"]
+[ext_resource type="Script" path="res://Scenes/Skill.gd" id="2_msa5d"]
+[ext_resource type="Script" path="res://Scenes/Stats.gd" id="3_hwire"]
+[ext_resource type="Texture2D" uid="uid://gf7mw2xxsi7" path="res://assets/32x32.png" id="4_o4i3s"]
+[ext_resource type="Script" path="res://Scenes/UI_Gold.gd" id="5_inwbj"]
+[ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="6_pqrm3"]
+[ext_resource type="Script" path="res://Scenes/start.gd" id="8_e22gj"]
+
+[sub_resource type="Resource" id="Resource_e412d"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.1
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb4yb"]
+atlas = ExtResource("4_o4i3s")
+region = Rect2(0, 1216, 32, 32)
+
+[sub_resource type="Resource" id="Resource_l1ine"]
+script = ExtResource("2_msa5d")
+name = "Might I"
+texture = SubResource("AtlasTexture_fb4yb")
+cost = 10
+stats = SubResource("Resource_e412d")
+
+[sub_resource type="Resource" id="Resource_c8m36"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.2
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jql22"]
+atlas = ExtResource("4_o4i3s")
+region = Rect2(0, 1216, 32, 32)
+
+[sub_resource type="Resource" id="Resource_mcrnb"]
+script = ExtResource("2_msa5d")
+name = "Might II"
+texture = SubResource("AtlasTexture_jql22")
+cost = 100
+stats = SubResource("Resource_c8m36")
+
+[sub_resource type="Resource" id="Resource_1lbds"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.3
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xld3d"]
+atlas = ExtResource("4_o4i3s")
+region = Rect2(0, 1216, 32, 32)
+
+[sub_resource type="Resource" id="Resource_roj42"]
+script = ExtResource("2_msa5d")
+name = "Might I"
+texture = SubResource("AtlasTexture_xld3d")
+cost = 1000
+stats = SubResource("Resource_1lbds")
+
+[sub_resource type="Resource" id="Resource_jbaph"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 1.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecsun"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(640, 4352, 64, 64)
+
+[sub_resource type="Resource" id="Resource_hbjms"]
+script = ExtResource("2_msa5d")
+name = "Armor I"
+texture = SubResource("AtlasTexture_ecsun")
+cost = 10
+stats = SubResource("Resource_jbaph")
+
+[sub_resource type="Resource" id="Resource_edxob"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 2.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtfrw"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(640, 4352, 64, 64)
+
+[sub_resource type="Resource" id="Resource_ygsoj"]
+script = ExtResource("2_msa5d")
+name = "Armor II"
+texture = SubResource("AtlasTexture_qtfrw")
+cost = 100
+stats = SubResource("Resource_edxob")
+
+[sub_resource type="Resource" id="Resource_fn3if"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 5.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a470"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(640, 4352, 64, 64)
+
+[sub_resource type="Resource" id="Resource_po8qm"]
+script = ExtResource("2_msa5d")
+name = "Armor III"
+texture = SubResource("AtlasTexture_0a470")
+cost = 1000
+stats = SubResource("Resource_fn3if")
+
+[sub_resource type="Resource" id="Resource_ufk8n"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.1
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwtiu"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(256, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_3v43i"]
+script = ExtResource("2_msa5d")
+name = "Recovery I"
+texture = SubResource("AtlasTexture_qwtiu")
+cost = 10
+stats = SubResource("Resource_ufk8n")
+
+[sub_resource type="Resource" id="Resource_qk8j1"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.2
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf72j"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(256, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_mq246"]
+script = ExtResource("2_msa5d")
+name = "Recovery II"
+texture = SubResource("AtlasTexture_pf72j")
+cost = 100
+stats = SubResource("Resource_qk8j1")
+
+[sub_resource type="Resource" id="Resource_2v5p1"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.3
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hlp3"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(256, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_4iitp"]
+script = ExtResource("2_msa5d")
+name = "Recovery III"
+texture = SubResource("AtlasTexture_3hlp3")
+cost = 1000
+stats = SubResource("Resource_2v5p1")
+
+[sub_resource type="Resource" id="Resource_k5baq"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 15.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf0mw"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(640, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_obgur"]
+script = ExtResource("2_msa5d")
+name = "Movement Speed I"
+texture = SubResource("AtlasTexture_jf0mw")
+cost = 10
+stats = SubResource("Resource_k5baq")
+
+[sub_resource type="Resource" id="Resource_uchn1"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 30.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38ytm"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(640, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_8lngx"]
+script = ExtResource("2_msa5d")
+name = "Movement Speed II"
+texture = SubResource("AtlasTexture_38ytm")
+cost = 100
+stats = SubResource("Resource_uchn1")
+
+[sub_resource type="Resource" id="Resource_csr75"]
+script = ExtResource("3_hwire")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 50.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fx6b"]
+atlas = ExtResource("6_pqrm3")
+region = Rect2(640, 2624, 64, 64)
+
+[sub_resource type="Resource" id="Resource_l67o1"]
+script = ExtResource("2_msa5d")
+name = "Movement Speed III"
+texture = SubResource("AtlasTexture_1fx6b")
+cost = 1000
+stats = SubResource("Resource_csr75")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkillTree" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r81yp")
+
+[node name="Might" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -268.0
+offset_right = -228.0
+skill = SubResource("Resource_l1ine")
+
+[node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -340.0
+offset_right = -300.0
+skill = SubResource("Resource_mcrnb")
+
+[node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -404.0
+offset_right = -364.0
+skill = SubResource("Resource_roj42")
+
+[node name="Armor" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -88.0
+offset_right = 20.0
+offset_bottom = -48.0
+skill = SubResource("Resource_hbjms")
+
+[node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -144.0
+offset_right = 20.0
+offset_bottom = -104.0
+skill = SubResource("Resource_ygsoj")
+
+[node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -208.0
+offset_right = 20.0
+offset_bottom = -168.0
+skill = SubResource("Resource_po8qm")
+
+[node name="Recovery" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = 68.0
+offset_right = 108.0
+skill = SubResource("Resource_3v43i")
+
+[node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = 124.0
+offset_right = 164.0
+skill = SubResource("Resource_mq246")
+
+[node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = 180.0
+offset_right = 220.0
+skill = SubResource("Resource_4iitp")
+
+[node name="Movement speed" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Movement speed" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 48.0
+offset_right = 28.0
+offset_bottom = 88.0
+skill = SubResource("Resource_obgur")
+
+[node name="Upgrade2" parent="SkillTree/Movement speed" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 104.0
+offset_right = 28.0
+offset_bottom = 144.0
+skill = SubResource("Resource_8lngx")
+
+[node name="Upgrade3" parent="SkillTree/Movement speed" instance=ExtResource("1_b2xfp")]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 160.0
+offset_right = 28.0
+offset_bottom = 200.0
+skill = SubResource("Resource_l67o1")
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 64.0
+horizontal_alignment = 2
+script = ExtResource("5_inwbj")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -136.0
+offset_right = 96.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start"
+script = ExtResource("8_e22gj")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]

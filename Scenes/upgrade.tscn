@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://disbhycexre2v"]
+
+[ext_resource type="Script" path="res://Scenes/upgrade_button.gd" id="1_5wrwy"]
+
+[node name="Upgrade" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_5wrwy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

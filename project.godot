@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 SoundManager="*res://Scenes/sound_manager.tscn"
 MusicManager="*res://Scenes/music_manager.tscn"
+SaveData="*res://Scenes/save_data.tscn"
+Persistence="*res://Scenes/persistence.tscn"
 
 [file_customization]
 
