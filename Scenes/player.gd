@@ -1,10 +1,16 @@
 extends CharacterBody2D
 @onready var anim := $AnimatedSprite2D
+@export var hurt_sound : AudioStream
+
+var damage_sound_timer := 0.0
+const DAMAGE_SOUND_COOLDOWN := 0.6  # sekundy
 
 var health : float = 100.0 :
 	set(value):
 		health = max(value,0)
 		%Health.value = value
+		#if health <=0:
+			#get_tree().paused = true
  
 var movement_speed : float = 150
 var max_health : float = 100 :
@@ -62,12 +68,22 @@ func _physics_process(delta):
 	velocity = Input.get_vector("left","right","up","down") * movement_speed
 	move_and_collide(velocity * delta)
 	_update_animation(velocity)
+	damage_sound_timer -= delta
 	check_XP()
 	health += recovery * delta
  
 func take_damage(amount):
-	health -= max(amount - armor, 0)
-	#print(amount)
+	var real_damage = max(amount * (armor/(amount + armor)), 1)
+	if real_damage <= 0:
+		return
+
+	health -= real_damage
+
+	# přehraj zvuk maximálně jednou za 0.3s
+	if damage_sound_timer <= 0.0:
+		SoundManager.play_sfx(hurt_sound, true)
+		damage_sound_timer = DAMAGE_SOUND_COOLDOWN
+
  
 func check_XP():
 	if XP > %XP.max_value:

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Health" load_steps=4 format=3 uid="uid://cvpwqyj702bkj"]
+[gd_resource type="Resource" script_class="Health" load_steps=5 format=3 uid="uid://cvpwqyj702bkj"]
 
 [ext_resource type="Texture2D" uid="uid://gf7mw2xxsi7" path="res://assets/32x32.png" id="1_qe8xw"]
 [ext_resource type="Script" path="res://Scenes/Health.gd" id="2_1m2ow"]
+[ext_resource type="AudioStream" uid="uid://ck6n817r3hkdy" path="res://assets/sound/rpg/rpg/wave/utility/utility5.wav" id="3_c7qt3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bq4q0"]
 atlas = ExtResource("1_qe8xw")
@@ -13,3 +14,4 @@ amount = 20
 title = "Strawberry"
 icon = SubResource("AtlasTexture_bq4q0")
 description = "+20 Health"
+sound = ExtResource("3_c7qt3")

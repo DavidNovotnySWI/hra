@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Gold" load_steps=4 format=3 uid="uid://carm536ouwmet"]
+[gd_resource type="Resource" script_class="Gold" load_steps=5 format=3 uid="uid://carm536ouwmet"]
 
 [ext_resource type="Script" path="res://Scenes/Gold.gd" id="1_0elk1"]
 [ext_resource type="Texture2D" uid="uid://c6qt8svdveu7c" path="res://assets/16x16.png" id="1_hvvi8"]
+[ext_resource type="AudioStream" uid="uid://3qhhoj06bik7" path="res://assets/sound/rpg/rpg/wave/utility/utility11.wav" id="3_fi31n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aatci"]
 atlas = ExtResource("1_hvvi8")
@@ -13,3 +14,4 @@ gold = 5
 title = "Gold"
 icon = SubResource("AtlasTexture_aatci")
 description = "gain +5 gold"
+sound = ExtResource("3_fi31n")

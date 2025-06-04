@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Gem" load_steps=3 format=3 uid="uid://c2cm1dupaxml0"]
+[gd_resource type="Resource" script_class="Gem" load_steps=4 format=3 uid="uid://c2cm1dupaxml0"]
 
 [ext_resource type="Texture2D" uid="uid://dtscbbwoox4tt" path="res://assets/PickUps/xp_small.png" id="1_48kao"]
 [ext_resource type="Script" path="res://Scenes/Gem.gd" id="2_5hevc"]
+[ext_resource type="AudioStream" uid="uid://cefi4edw44rxq" path="res://assets/sound/rpg/rpg/wave/utility/utility10.wav" id="3_fv6ld"]
 
 [resource]
 script = ExtResource("2_5hevc")
@@ -9,3 +10,4 @@ XP = 1.0
 title = "Blue Gem"
 icon = ExtResource("1_48kao")
 description = "Gain 1 exp points"
+sound = ExtResource("3_fv6ld")

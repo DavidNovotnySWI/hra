@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SingleShot" load_steps=6 format=3 uid="uid://bq4v27m4cp6c1"]
+[gd_resource type="Resource" script_class="SingleShot" load_steps=7 format=3 uid="uid://bq4v27m4cp6c1"]
 
 [ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/projectile.tscn" id="1_2pmxl"]
 [ext_resource type="Script" path="res://Scenes/SingleShot.gd" id="2_xkwej"]
+[ext_resource type="AudioStream" uid="uid://da31c0llxg4oi" path="res://assets/sound/rpg/rpg/wave/attack/spell6.wav" id="3_0mpkw"]
 [ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="3_dyjk4"]
 [ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_pll2f"]
 
@@ -11,10 +12,11 @@ region = Rect2(832, 6784, 64, 64)
 
 [resource]
 script = ExtResource("2_xkwej")
-damage = 10.0
-cooldown = 0.1
+damage = 5.0
+cooldown = 0.5
 speed = 500.0
 projectile_node = ExtResource("1_2pmxl")
 upgrades = Array[ExtResource("4_pll2f")]([])
+sound = ExtResource("3_0mpkw")
 title = "Holy Wand 2"
 texture = SubResource("AtlasTexture_5l8tt")

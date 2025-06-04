@@ -514,7 +514,6 @@ enemy_types = Array[ExtResource("2_x84wo")]([ExtResource("3_pwd85"), ExtResource
 position = Vector2(575, 342)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.347114, 0.307668, 0.492637, 1)
 blend_mode = 2
 
 [node name="Destructible" parent="." instance=ExtResource("14_unb2j")]

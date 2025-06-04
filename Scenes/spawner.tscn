@@ -19,10 +19,10 @@ destructible = ExtResource("9_561c8")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-offset_left = 1025.0
-offset_top = 92.0
-offset_right = 1065.0
-offset_bottom = 132.0
+offset_left = 1087.0
+offset_top = 97.0
+offset_right = 1127.0
+offset_bottom = 137.0
 
 [node name="Minute" type="Label" parent="UI/HBoxContainer"]
 unique_name_in_owner = true

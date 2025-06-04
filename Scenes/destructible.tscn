@@ -13,8 +13,7 @@ radius = 7.0
 height = 46.0
 
 [sub_resource type="Gradient" id="Gradient_xc2ph"]
-offsets = PackedFloat32Array(0, 0.627397, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.345205, 0.345205, 0.345205, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.884155, 0.371488, 0.29937, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vdaxh"]
 gradient = SubResource("Gradient_xc2ph")
