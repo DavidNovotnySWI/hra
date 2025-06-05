@@ -9,7 +9,9 @@ var health : float = 100.0 :
 	set(value):
 		health = max(value,0)
 		%Health.value = value
+		%HeatlhBarUI.value = value
 		if health <=0:
+			anim.play("death")
 			get_tree().paused = true
  
 var movement_speed : float = 150:
@@ -54,13 +56,13 @@ var level : int = 1:
 		if level == 2:
 			%XP.max_value = 10
 		elif level == 3:
-			%XP.max_value = 10
+			%XP.max_value = 15
 		elif level == 4:
-			%XP.max_value = 10
+			%XP.max_value = 20
 		elif level == 5:
-			%XP.max_value = 10
+			%XP.max_value = 30
 		elif level >= 6:
-			%XP.max_value = 10
+			%XP.max_value = %XP.max_value * 1.3
 
 var gold : int = 0:
 	set(value):

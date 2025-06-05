@@ -1,5 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://eq1ikkjd2ymy"]
+[gd_scene load_steps=56 format=3 uid="uid://eq1ikkjd2ymy"]
 
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_8ehci"]
 [ext_resource type="PackedScene" uid="uid://disbhycexre2v" path="res://Scenes/upgrade.tscn" id="1_b2xfp"]
 [ext_resource type="Script" path="res://Scenes/skill_tree.gd" id="1_r81yp"]
 [ext_resource type="Script" path="res://Scenes/Skill.gd" id="2_msa5d"]
@@ -8,6 +9,243 @@
 [ext_resource type="Script" path="res://Scenes/UI_Gold.gd" id="5_inwbj"]
 [ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="6_pqrm3"]
 [ext_resource type="Script" path="res://Scenes/start.gd" id="8_e22gj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlbld"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.230339, 0.307465, 0.616195, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0eln"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.388203, 0.478323, 0.73091, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvk0r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.194129, 0.208531, 0.362582, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uk8y4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.342258, 0.44668, 0.690064, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awkyv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="FontFile" id="FontFile_62j8u"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/75/0/ascent = 0.0
+cache/0/75/0/descent = 0.0
+cache/0/75/0/underline_position = 0.0
+cache/0/75/0/underline_thickness = 0.0
+cache/0/75/0/scale = 1.0
+cache/0/85/0/ascent = 0.0
+cache/0/85/0/descent = 0.0
+cache/0/85/0/underline_position = 0.0
+cache/0/85/0/underline_thickness = 0.0
+cache/0/85/0/scale = 1.0
+cache/0/90/0/ascent = 0.0
+cache/0/90/0/descent = 0.0
+cache/0/90/0/underline_position = 0.0
+cache/0/90/0/underline_thickness = 0.0
+cache/0/90/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/110/0/ascent = 0.0
+cache/0/110/0/descent = 0.0
+cache/0/110/0/underline_position = 0.0
+cache/0/110/0/underline_thickness = 0.0
+cache/0/110/0/scale = 1.0
+cache/0/120/0/ascent = 0.0
+cache/0/120/0/descent = 0.0
+cache/0/120/0/underline_position = 0.0
+cache/0/120/0/underline_thickness = 0.0
+cache/0/120/0/scale = 1.0
+cache/0/125/0/ascent = 0.0
+cache/0/125/0/descent = 0.0
+cache/0/125/0/underline_position = 0.0
+cache/0/125/0/underline_thickness = 0.0
+cache/0/125/0/scale = 1.0
+cache/0/130/0/ascent = 0.0
+cache/0/130/0/descent = 0.0
+cache/0/130/0/underline_position = 0.0
+cache/0/130/0/underline_thickness = 0.0
+cache/0/130/0/scale = 1.0
+cache/0/115/0/ascent = 0.0
+cache/0/115/0/descent = 0.0
+cache/0/115/0/underline_position = 0.0
+cache/0/115/0/underline_thickness = 0.0
+cache/0/115/0/scale = 1.0
+cache/0/105/0/ascent = 0.0
+cache/0/105/0/descent = 0.0
+cache/0/105/0/underline_position = 0.0
+cache/0/105/0/underline_thickness = 0.0
+cache/0/105/0/scale = 1.0
+cache/0/95/0/ascent = 0.0
+cache/0/95/0/descent = 0.0
+cache/0/95/0/underline_position = 0.0
+cache/0/95/0/underline_thickness = 0.0
+cache/0/95/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/65/0/ascent = 0.0
+cache/0/65/0/descent = 0.0
+cache/0/65/0/underline_position = 0.0
+cache/0/65/0/underline_thickness = 0.0
+cache/0/65/0/scale = 1.0
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_4hfoj"]
+default_font = SubResource("FontFile_62j8u")
+default_font_size = 15
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.203003, 0.463478, 0.785967, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.328315, 0.540658, 0.762709, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(0.305977, 0.454352, 0.721873, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_wlbld")
+Button/styles/focus = SubResource("StyleBoxFlat_a0eln")
+Button/styles/hover = SubResource("StyleBoxFlat_uvk0r")
+Button/styles/normal = SubResource("StyleBoxFlat_uk8y4")
+Button/styles/pressed = SubResource("StyleBoxFlat_awkyv")
 
 [sub_resource type="Resource" id="Resource_e412d"]
 script = ExtResource("3_hwire")
@@ -285,6 +523,17 @@ texture = SubResource("AtlasTexture_1fx6b")
 cost = 1000
 stats = SubResource("Resource_csr75")
 
+[sub_resource type="Curve" id="Curve_jhn0r"]
+_data = [Vector2(0, 0.958019), 0.0, 0.0, 0, 0, Vector2(0.980609, 0.020452), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j0bg2"]
+curve = SubResource("Curve_jhn0r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq0hy"]
+texture = SubResource("CurveTexture_j0bg2")
+modulate_color = Color(0.183405, 0.145227, 0.735897, 1)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -292,6 +541,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_4hfoj")
+script = ExtResource("1_8ehci")
 
 [node name="SkillTree" type="Panel" parent="."]
 layout_mode = 1
@@ -451,7 +702,17 @@ offset_bottom = 64.0
 horizontal_alignment = 2
 script = ExtResource("5_inwbj")
 
-[node name="Start" type="Button" parent="."]
+[node name="Menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_eq0hy")
+
+[node name="Start" type="Button" parent="Menu"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -459,12 +720,33 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
-offset_top = -136.0
+offset_top = -192.0
 offset_right = 96.0
-offset_bottom = -49.0
+offset_bottom = -105.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 text = "Start"
 script = ExtResource("8_e22gj")
 
-[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[node name="Upgrades" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 352.0
+offset_right = 672.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 30
+text = "Upgrades"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 114.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

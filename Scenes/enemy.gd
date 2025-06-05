@@ -42,8 +42,9 @@ func check_separation(_delta):
 	if separation < player_reference.nearest_enemy_distance:
 		player_reference.nearest_enemy = self
  
-	if separation >= 500 and not elite:
+	if separation >= 800 and not elite:
 		queue_free()
+	
  
 func knockback_update(delta):
 	velocity = (player_reference.position - position).normalized() * speed
