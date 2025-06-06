@@ -52,12 +52,20 @@ func amount(number : int = 1):
 		
 func _on_timer_timeout():
 	second += 1
-	amount(second % 10)
+
+	if minute < 1:
+		amount(1)  # extrémně pomalý začátek
+	elif minute < 2:
+		amount(2)
+	else:
+		amount(second % 10)
 
 
 func _on_pattern_timeout() -> void:
-	for i in range(75):
+	var spawn_count := 25 + minute * 10  # roste postupně
+	for i in range(spawn_count):
 		spawn(get_random_position())
+
 
 
 func _on_elite_timeout() -> void:

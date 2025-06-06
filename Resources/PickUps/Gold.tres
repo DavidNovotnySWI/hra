@@ -10,7 +10,7 @@ region = Rect2(32, 128, 16, 16)
 
 [resource]
 script = ExtResource("1_0elk1")
-gold = 5
+gold = 20
 title = "Gold"
 icon = SubResource("AtlasTexture_aatci")
 description = "gain +5 gold"

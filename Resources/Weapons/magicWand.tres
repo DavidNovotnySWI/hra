@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SingleShot" load_steps=14 format=3 uid="uid://ba768tc60563q"]
+[gd_resource type="Resource" script_class="SingleShot" load_steps=12 format=3 uid="uid://ba768tc60563q"]
 
 [ext_resource type="Resource" uid="uid://bq4v27m4cp6c1" path="res://Resources/Weapons/HolyWand2.tres" id="1_12duh"]
 [ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/projectile.tscn" id="1_jodj7"]
@@ -20,37 +20,23 @@ description = "+1 Damage"
 script = ExtResource("5_hbg8b")
 speed = 0.0
 damage = 0.0
-cooldown = -0.2
-description = "-0.2s cooldown"
+cooldown = -0.1
+description = "-0.1s cooldown"
 
 [sub_resource type="Resource" id="Resource_mf4bd"]
 script = ExtResource("5_hbg8b")
-speed = 200.0
+speed = 100.0
 damage = 0.0
 cooldown = 0.0
-description = "+200 Speed"
-
-[sub_resource type="Resource" id="Resource_levwl"]
-script = ExtResource("5_hbg8b")
-speed = 0.0
-damage = 2.0
-cooldown = 0.0
-description = "+2 Damage"
-
-[sub_resource type="Resource" id="Resource_fbqw7"]
-script = ExtResource("5_hbg8b")
-speed = 0.0
-damage = 0.0
-cooldown = -0.1
-description = "-0.1s Cooldown"
+description = "+100 Speed"
 
 [resource]
 script = ExtResource("2_ij5gk")
-damage = 1.0
+damage = 2.0
 cooldown = 1.0
 speed = 400.0
 projectile_node = ExtResource("1_jodj7")
-upgrades = Array[ExtResource("4_s2vmv")]([SubResource("Resource_7154r"), SubResource("Resource_mr8wm"), SubResource("Resource_mf4bd"), SubResource("Resource_levwl"), SubResource("Resource_fbqw7")])
+upgrades = Array[ExtResource("4_s2vmv")]([SubResource("Resource_7154r"), SubResource("Resource_mr8wm"), SubResource("Resource_mf4bd")])
 item_needed = ExtResource("2_s8ogu")
 evolution = ExtResource("1_12duh")
 sound = ExtResource("5_udfff")

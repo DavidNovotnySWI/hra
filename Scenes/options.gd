@@ -38,42 +38,46 @@ func add_option(item) -> int:
 func show_options():
 	var weapons_available = get_available_resource_in(weapons)
 	var passive_item_available = get_available_resource_in(passive_items)	
- 
+
 	if weapons_available.size() == 0 and passive_item_available.size() == 0:
 		return
- 
+
 	for slot in get_children():
 		slot.queue_free()
- 
+
 	var available = get_equipped_item()
 	if slot_available(weapons):
 		available.append_array(get_upgradable(every_weapon, get_equipped_item()))
 	if slot_available(passive_items):
 		available.append_array(get_upgradable(every_passive, get_equipped_item()))
 	available.shuffle()
- 
+
 	var option_size = 0
 	for i in range(3):
 		if available.size() > 0:
 			option_size += add_option(available.pop_front())
- 
- 
-	#for weapon in weapons_available:
-		#option_size += add_option(weapon)
-		#
-		##evolution option
-		##if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
-			##var option_slot = OptionSlot.instantiate()
-			##option_slot.item = weapon
-			##add_child(option_slot)
-			##option_size += 1
-	#
-	#for passive_item in passive_item_available:
-		#option_size += add_option(passive_item)
- 
+
+	# ---------- evoluční zbraně ----------
+	for weapon in weapons_available:
+		if option_size >= 3:          # ← další sloty už nesmíme přidat
+			break
+		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
+			var option_slot = OptionSlot.instantiate()
+			option_slot.item = weapon
+			add_child(option_slot)
+			option_size += 1
+			if option_size >= 3:      # ← kdybychom právě dosáhli 3, končíme hned
+				break
+
+	# ---------- pasivky ----------
+	for passive_item in passive_item_available:
+		if option_size >= 3:          # ← jsme na stropu, skončeme
+			break
+		option_size += add_option(passive_item)
+
 	if option_size == 0:
 		return
- 
+
 	show()
 	particles.show()
 	panel.show()

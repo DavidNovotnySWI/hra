@@ -1,14 +1,17 @@
-[gd_scene load_steps=36 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=43 format=3 uid="uid://dkt7spcbw3ubw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
 [ext_resource type="AudioStream" uid="uid://bf4ho0t8c04h6" path="res://assets/sound/rpg/rpg/wave/expressions/hurt2.wav" id="2_q06v1"]
 [ext_resource type="Texture2D" uid="uid://dtscbbwoox4tt" path="res://assets/PickUps/xp_small.png" id="2_r0tpp"]
 [ext_resource type="PackedScene" uid="uid://b1wxc1sicangf" path="res://Scenes/slot.tscn" id="2_yfing"]
+[ext_resource type="AudioStream" uid="uid://cm8b0qajndy6" path="res://assets/sound/rpg/rpg/wave/expressions/die4.wav" id="3_280ye"]
 [ext_resource type="Resource" uid="uid://ba768tc60563q" path="res://Resources/Weapons/magicWand.tres" id="3_iyfsy"]
 [ext_resource type="Texture2D" uid="uid://bmqb5qg0q4w7t" path="res://assets/GUI.png" id="4_1ay7x"]
+[ext_resource type="AudioStream" uid="uid://di7lx5sopi6la" path="res://assets/sound/rpg/rpg/wave/utility/utility17.wav" id="4_rsfr8"]
 [ext_resource type="Texture2D" uid="uid://gf7mw2xxsi7" path="res://assets/32x32.png" id="4_sowby"]
 [ext_resource type="Script" path="res://Scenes/options.gd" id="5_rup4h"]
 [ext_resource type="PackedScene" uid="uid://c4ehd05fj2dlw" path="res://Scenes/passive_slot.tscn" id="7_6p7tc"]
+[ext_resource type="Resource" uid="uid://d0fadb26md7tw" path="res://Resources/Weapons/ForceField.tres" id="8_5tmgx"]
 [ext_resource type="Script" path="res://Scenes/back.gd" id="12_bj7xl"]
 [ext_resource type="Texture2D" uid="uid://6chbxdxyrq8o" path="res://assets/character/character.png" id="16_i2k84"]
 
@@ -31,6 +34,22 @@ color_ramp = SubResource("GradientTexture1D_3otik")
 [sub_resource type="AtlasTexture" id="AtlasTexture_w53vt"]
 atlas = ExtResource("4_sowby")
 region = Rect2(320, 321, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sld60"]
+atlas = ExtResource("4_sowby")
+region = Rect2(0, 1440, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix0la"]
+atlas = ExtResource("4_sowby")
+region = Rect2(224, 3840, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnbip"]
+atlas = ExtResource("4_sowby")
+region = Rect2(129, 1312, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4b7q"]
+atlas = ExtResource("4_sowby")
+region = Rect2(321, 1313, 31, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4op4w"]
 atlas = ExtResource("4_1ay7x")
@@ -166,6 +185,8 @@ radius = 50.0
 position = Vector2(-2, 0)
 script = ExtResource("1_dgp2d")
 hurt_sound = ExtResource("2_q06v1")
+death_sound = ExtResource("3_280ye")
+lvl_up_sound = ExtResource("4_rsfr8")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -180,10 +201,10 @@ lifetime = 1.5
 
 [node name="Gold" type="Label" parent="UI"]
 unique_name_in_owner = true
-offset_left = 871.0
-offset_top = 85.0
-offset_right = 939.0
-offset_bottom = 108.0
+offset_left = 868.0
+offset_top = 80.0
+offset_right = 936.0
+offset_bottom = 103.0
 text = "0"
 
 [node name="gold_Icon" type="NinePatchRect" parent="UI/Gold"]
@@ -193,38 +214,70 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -16.5
-offset_right = -34.0
-offset_bottom = 16.5
+offset_left = -74.0
+offset_top = -15.5
+offset_right = -37.0
+offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_w53vt")
 
 [node name="Debug" type="VBoxContainer" parent="UI"]
+offset_left = 39.0
 offset_top = 109.0
-offset_right = 40.0
+offset_right = 129.0
 offset_bottom = 253.0
 
 [node name="Might" type="Label" parent="UI/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "M: 1"
+text = "1"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Debug/Might"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -1.0
+offset_right = -6.0
+offset_bottom = 24.0
+texture = SubResource("AtlasTexture_sld60")
 
 [node name="Armor" type="Label" parent="UI/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "A: 0"
+text = "0"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Debug/Armor"]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -4.0
+offset_right = -5.0
+offset_bottom = 26.0
+texture = SubResource("AtlasTexture_ix0la")
 
 [node name="Recovery" type="Label" parent="UI/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "R: 0"
+text = "0"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Debug/Recovery"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 1.0
+offset_right = -7.0
+offset_bottom = 24.0
+texture = SubResource("AtlasTexture_fnbip")
 
 [node name="MovementSpeed" type="Label" parent="UI/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "MS: 150"
+text = "150"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Debug/MovementSpeed"]
+layout_mode = 0
+offset_left = -30.0
+offset_right = -7.0
+offset_bottom = 23.0
+texture = SubResource("AtlasTexture_i4b7q")
 
 [node name="Panel" type="NinePatchRect" parent="UI"]
 process_mode = 3
@@ -263,13 +316,14 @@ item = ExtResource("3_iyfsy")
 
 [node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_yfing")]
 layout_mode = 2
+item = ExtResource("8_5tmgx")
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_yfing")]
 layout_mode = 2
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
 offset_top = 44.0
-offset_right = 128.0
+offset_right = 348.0
 offset_bottom = 84.0
 
 [node name="PassiveSlot" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
@@ -310,11 +364,12 @@ texture_progress = SubResource("AtlasTexture_u840s")
 [node name="Level" type="Label" parent="UI/XP"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 35.7778
-offset_top = 8.0
-offset_right = 76.7778
-offset_bottom = 35.0
+offset_left = 36.2
+offset_top = 9.25
+offset_right = 102.2
+offset_bottom = 45.25
 scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 26
 text = "LVL 1"
 horizontal_alignment = 1
 vertical_alignment = 1

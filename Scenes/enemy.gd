@@ -15,7 +15,7 @@ var health : float:
 		health = value
 		if health <= 0:
 			drop_item()
-			queue_free()
+			#queue_free()
  
 var elite : bool = false:
 	set(value):

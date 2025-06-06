@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @onready var anim := $AnimatedSprite2D
 @export var hurt_sound : AudioStream
+@export var death_sound: AudioStream
+@export var lvl_up_sound: AudioStream
 
 var damage_sound_timer := 0.0
 const DAMAGE_SOUND_COOLDOWN := 0.6  # sekundy
@@ -12,12 +14,13 @@ var health : float = 100.0 :
 		%HeatlhBarUI.value = value
 		if health <=0:
 			anim.play("death")
+			SoundManager.play_sfx(death_sound)
 			get_tree().paused = true
  
 var movement_speed : float = 150:
 	set(value):
 		movement_speed = value
-		%MovementSpeed.text = "MS :" + str(value)
+		%MovementSpeed.text = str(value)
 
 var max_health : float = 100 :
 	set(value):
@@ -27,15 +30,15 @@ var max_health : float = 100 :
 var recovery : float = 0:
 	set(value):
 		recovery = value
-		%Recovery.text = "R :" + str(value)
+		%Recovery.text = str(value)
 var armor : float = 0:
 	set(value):
 		armor = value
-		%Armor.text = "A :" + str(value)
+		%Armor.text =  str(value)
 var might : float = 1.5:
 	set(value):
 		might = value
-		%Might.text = "M :" + str(value)
+		%Might.text =  str(value)
 	
 var area : float = 0
 var magnet : float  = 0:
@@ -53,16 +56,18 @@ var level : int = 1:
 		level = value
 		%Level.text = str(value)
 		%Options.show_options()
+		SoundManager.play_sfx(lvl_up_sound)
 		if level == 2:
 			%XP.max_value = 10
 		elif level == 3:
-			%XP.max_value = 15
-		elif level == 4:
 			%XP.max_value = 20
-		elif level == 5:
+		elif level == 4:
 			%XP.max_value = 30
+		elif level == 5:
+			%XP.max_value = 40
 		elif level >= 6:
-			%XP.max_value = %XP.max_value * 1.3
+			#%XP.max_value = 30
+			%XP.max_value = %XP.max_value * 1.2
 
 var distance_in_pixel : float
 
