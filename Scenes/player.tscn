@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=36 format=3 uid="uid://dkt7spcbw3ubw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
 [ext_resource type="AudioStream" uid="uid://bf4ho0t8c04h6" path="res://assets/sound/rpg/rpg/wave/expressions/hurt2.wav" id="2_q06v1"]
@@ -8,11 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bmqb5qg0q4w7t" path="res://assets/GUI.png" id="4_1ay7x"]
 [ext_resource type="Texture2D" uid="uid://gf7mw2xxsi7" path="res://assets/32x32.png" id="4_sowby"]
 [ext_resource type="Script" path="res://Scenes/options.gd" id="5_rup4h"]
-[ext_resource type="Resource" uid="uid://d0ghybqa1msyp" path="res://Resources/Passive Items/Magnet.tres" id="7_5e1bo"]
 [ext_resource type="PackedScene" uid="uid://c4ehd05fj2dlw" path="res://Scenes/passive_slot.tscn" id="7_6p7tc"]
-[ext_resource type="Resource" uid="uid://djef8egp4sj5i" path="res://Resources/Passive Items/Armor.tres" id="11_6jmsj"]
 [ext_resource type="Script" path="res://Scenes/back.gd" id="12_bj7xl"]
-[ext_resource type="Resource" uid="uid://c5vfv7j64phtw" path="res://Resources/Passive Items/AttackRange.tres" id="13_dp6ui"]
 [ext_resource type="Texture2D" uid="uid://6chbxdxyrq8o" path="res://assets/character/character.png" id="16_i2k84"]
 
 [sub_resource type="Gradient" id="Gradient_iccrq"]
@@ -277,15 +274,12 @@ offset_bottom = 84.0
 
 [node name="PassiveSlot" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("7_5e1bo")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("11_6jmsj")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
-item = ExtResource("13_dp6ui")
 
 [node name="PassiveSlot4" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2

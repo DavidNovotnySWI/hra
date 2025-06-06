@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hra"
-run/main_scene="res://test_scene.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,10 +21,13 @@ SoundManager="*res://Scenes/sound_manager.tscn"
 MusicManager="*res://Scenes/music_manager.tscn"
 SaveData="*res://Scenes/save_data.tscn"
 Persistence="*res://Scenes/persistence.tscn"
+ParticleFx="*res://Scenes/particle_fx.tscn"
+ShaderPool="*res://Scenes/shader_pool.tscn"
 
 [file_customization]
 
 folder_colors={
+"res://Particles/": "pink",
 "res://Resources/": "blue",
 "res://Resources/Enemies/": "red",
 "res://Resources/Passive Items/": "orange",

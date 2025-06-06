@@ -21,7 +21,7 @@ var elite : bool = false:
 	set(value):
 		elite = value
 		if value:
-			$Sprite2D.material = load("res://shaders/RainBow.tres")
+			$Sprite2D.material = ShaderPool.outline
 			scale = Vector2(1.5,1.5)
  
 var type : Enemy:
@@ -88,5 +88,23 @@ func drop_item():
 	item_to_drop.player_reference = player_reference
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
+	
+	disable()
+	await  set_shader()
 	queue_free()
+	
+func set_shader_value(value: float):
+	$Sprite2D.material.set_shader_parameter("dissolve_value", value)
+	
+func set_shader():
+	$Sprite2D.material = ShaderPool.burn.duplicate()
+	$Sprite2D.material.set_shader_parameter("dissolve_texture", type.texture)
+	
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_shader_value, 1.0, 0.0, 1)
+	await tween.finished
+	
+func disable():
+	speed = 0
+	$CollisionShape2D.set_deferred("disabled", true)
 	

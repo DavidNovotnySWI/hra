@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cenmqirvt5vwh"]
+
+[ext_resource type="Shader" path="res://shaders/burn.gdshader" id="1_v1xcw"]
+[ext_resource type="Texture2D" uid="uid://dae0cfoqyg7mk" path="res://assets/RPG Battlers 3/1 v1.png" id="2_8wuoa"]
+
+[resource]
+shader = ExtResource("1_v1xcw")
+shader_parameter/dissolve_value = 0.0
+shader_parameter/burn_size = 0.4
+shader_parameter/ash_color = Color(0, 0, 0, 1)
+shader_parameter/burn_color = Color(3, 0.777, 0.169, 1)
+shader_parameter/proburn_color = Color(3, 0.2, 0.093, 1)
+shader_parameter/dissolve_texture = ExtResource("2_8wuoa")

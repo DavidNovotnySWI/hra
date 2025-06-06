@@ -52,7 +52,7 @@ var level : int = 1:
 	set(value):
 		level = value
 		%Level.text = str(value)
-		%Options.show_option()
+		%Options.show_options()
 		if level == 2:
 			%XP.max_value = 10
 		elif level == 3:
@@ -63,6 +63,8 @@ var level : int = 1:
 			%XP.max_value = 30
 		elif level >= 6:
 			%XP.max_value = %XP.max_value * 1.3
+
+var distance_in_pixel : float
 
 var gold : int = 0:
 	set(value):
@@ -85,9 +87,17 @@ func _physics_process(delta):
 	else:
 		nearest_enemy_distance = 150 + area
 		nearest_enemy = null
+	
+	var initial_position = position
 	velocity = Input.get_vector("left","right","up","down") * movement_speed
 	move_and_collide(velocity * delta)
 	_update_animation(velocity)
+	distance_in_pixel += position.distance_to(initial_position)
+	
+	if distance_in_pixel >= 20:
+		distance_in_pixel -= 20
+		ParticleFx.add_effect("dust", position + Vector2(0,15))
+	
 	damage_sound_timer -= delta
 	check_XP()
 	health += recovery * delta
