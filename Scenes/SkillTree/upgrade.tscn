@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://disbhycexre2v"]
 
-[ext_resource type="Script" path="res://Scenes/upgrade_button.gd" id="1_5wrwy"]
-[ext_resource type="PackedScene" uid="uid://c45yhf8k3if1w" path="res://Scenes/line_2d.tscn" id="2_0g4go"]
+[ext_resource type="Script" path="res://Scenes/SkillTree/upgrade_button.gd" id="1_5wrwy"]
+[ext_resource type="PackedScene" uid="uid://c45yhf8k3if1w" path="res://Scenes/SkillTree/line_2d.tscn" id="2_0g4go"]
 
 [node name="Upgrade" type="TextureButton"]
 offset_right = 40.0

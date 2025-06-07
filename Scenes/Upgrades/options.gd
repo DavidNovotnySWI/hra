@@ -2,7 +2,7 @@ extends VBoxContainer
 
 @export var weapons : HBoxContainer
 @export var passive_items: HBoxContainer
-var OptionSlot = preload("res://Scenes/option_slot.tscn")
+var OptionSlot = preload("res://Scenes/Upgrades/option_slot.tscn")
 
 @export var particles: GPUParticles2D
 @export var panel: NinePatchRect

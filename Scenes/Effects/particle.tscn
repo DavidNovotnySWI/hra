@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ypwkgjdjh5g"]
 
 [ext_resource type="Material" uid="uid://dak6cdlapab5p" path="res://Particles/Dust.tres" id="1_nh4ts"]
-[ext_resource type="Script" path="res://Scenes/particle.gd" id="1_owxm1"]
+[ext_resource type="Script" path="res://Scenes/Effects/particle.gd" id="1_owxm1"]
 
 [node name="Particle" type="GPUParticles2D"]
 emitting = false

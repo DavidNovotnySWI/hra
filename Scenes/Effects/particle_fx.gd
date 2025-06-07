@@ -4,7 +4,7 @@ var effects = {
 	"dust" : load("res://Particles/Dust.tres"),
 	#"blood" : load("res://Particles/blood.tres")
 }
-var particle : PackedScene = preload("res://Scenes/particle.tscn")
+var particle : PackedScene = preload("res://Scenes/Effects/particle.tscn")
  
 func add_effect(effect_name: String, pos: Vector2, parent: Node = null):
 	if effect_name not in effects:

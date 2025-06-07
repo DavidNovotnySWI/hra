@@ -17,12 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SoundManager="*res://Scenes/sound_manager.tscn"
-MusicManager="*res://Scenes/music_manager.tscn"
-SaveData="*res://Scenes/save_data.tscn"
-Persistence="*res://Scenes/persistence.tscn"
-ParticleFx="*res://Scenes/particle_fx.tscn"
-ShaderPool="*res://Scenes/shader_pool.tscn"
+SoundManager="*res://Scenes/Sound&Music/sound_manager.tscn"
+MusicManager="*res://Scenes/Sound&Music/music_manager.tscn"
+SaveData="*res://Scenes/SaveData/save_data.tscn"
+Persistence="*res://Scenes/SaveData/persistence.tscn"
+ParticleFx="*res://Scenes/Effects/particle_fx.tscn"
+ShaderPool="*res://Scenes/SkillTree/shader_pool.tscn"
 
 [file_customization]
 

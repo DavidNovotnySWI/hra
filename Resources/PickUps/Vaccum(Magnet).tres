@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PickupMagnet" load_steps=5 format=3 uid="uid://c6r5dum6x4c2c"]
 
 [ext_resource type="Texture2D" uid="uid://gf7mw2xxsi7" path="res://assets/32x32.png" id="1_k8n06"]
-[ext_resource type="Script" path="res://Scenes/Vaccum.gd" id="2_vrm4k"]
+[ext_resource type="Script" path="res://Scenes/PickUps/Vaccum.gd" id="2_vrm4k"]
 [ext_resource type="AudioStream" uid="uid://dpp6ppelweooj" path="res://assets/sound/rpg/rpg/wave/utility/utility14.wav" id="3_u3d4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qsi3"]

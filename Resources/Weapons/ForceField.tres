@@ -2,11 +2,11 @@
 
 [ext_resource type="Resource" uid="uid://crltcvdipt3ox" path="res://Resources/Passive Items/Growth.tres" id="1_1stft"]
 [ext_resource type="Resource" uid="uid://x58iixyb27p4" path="res://Resources/Weapons/StrongerField.tres" id="1_qu4in"]
-[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/projectile.tscn" id="1_syc7b"]
-[ext_resource type="Script" path="res://Scenes/DamagingArea.gd" id="2_rb0be"]
+[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/Weapon/projectile.tscn" id="1_syc7b"]
+[ext_resource type="Script" path="res://Scenes/Weapon/DamagingArea.gd" id="2_rb0be"]
 [ext_resource type="AudioStream" uid="uid://xtw2jgkd53ox" path="res://assets/sound/rpg/rpg/wave/attack/attack10.wav" id="3_o1kn0"]
-[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_6nks5"]
-[ext_resource type="Script" path="res://Scenes/DamagingAreaUpgrade.gd" id="6_jfmxh"]
+[ext_resource type="Script" path="res://Scenes/Weapon/Upgrade.gd" id="4_6nks5"]
+[ext_resource type="Script" path="res://Scenes/Weapon/DamagingAreaUpgrade.gd" id="6_jfmxh"]
 [ext_resource type="Texture2D" uid="uid://bm2hxsi33tla8" path="res://assets/aura_fix.png" id="6_jm0so"]
 
 [sub_resource type="Resource" id="Resource_iirh2"]

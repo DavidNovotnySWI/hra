@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dxwslqh2ywj54"]
 
 [ext_resource type="Texture2D" uid="uid://hfiklqp01r6q" path="res://assets/Torch Animated.png" id="1_83h8p"]
-[ext_resource type="Script" path="res://Scenes/destructible.gd" id="2_4qhmd"]
-[ext_resource type="Script" path="res://Scenes/PickUpResource.gd" id="3_7h86x"]
+[ext_resource type="Script" path="res://Scenes/Destructible/destructible.gd" id="2_4qhmd"]
+[ext_resource type="Script" path="res://Scenes/PickUps/PickUpResource.gd" id="3_7h86x"]
 [ext_resource type="Resource" uid="uid://cvpwqyj702bkj" path="res://Resources/PickUps/Strawberry.tres" id="4_dl1c8"]
 [ext_resource type="Resource" uid="uid://c7eh6yartjoh5" path="res://Resources/PickUps/Death.tres" id="4_otfnh"]
 [ext_resource type="Resource" uid="uid://c6r5dum6x4c2c" path="res://Resources/PickUps/Vaccum(Magnet).tres" id="4_rchas"]

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://1viu1dmr71kd"]
 
-[ext_resource type="Script" path="res://Scenes/PassiveItem.gd" id="1_0v20a"]
+[ext_resource type="Script" path="res://Scenes/Upgrades/PassiveItem.gd" id="1_0v20a"]
 [ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="2_2mo3j"]
-[ext_resource type="Script" path="res://Scenes/Stats.gd" id="3_vcovb"]
+[ext_resource type="Script" path="res://Scenes/Upgrades/Stats.gd" id="3_vcovb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmp6g"]
 atlas = ExtResource("2_2mo3j")

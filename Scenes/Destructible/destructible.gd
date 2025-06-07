@@ -11,7 +11,7 @@ var health : float = 10:
 			drop_item()
 
  
-var drop_node = preload("res://scenes/pickups.tscn")
+var drop_node = preload("res://scenes/PickUps/pickups.tscn")
 @export var drops : Array[Pickups]
  
 func _physics_process(_delta):

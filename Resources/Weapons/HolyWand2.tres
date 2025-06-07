@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SingleShot" load_steps=7 format=3 uid="uid://bq4v27m4cp6c1"]
 
-[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/projectile.tscn" id="1_2pmxl"]
-[ext_resource type="Script" path="res://Scenes/SingleShot.gd" id="2_xkwej"]
+[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/Weapon/projectile.tscn" id="1_2pmxl"]
+[ext_resource type="Script" path="res://Scenes/Weapon/SingleShot.gd" id="2_xkwej"]
 [ext_resource type="AudioStream" uid="uid://da31c0llxg4oi" path="res://assets/sound/rpg/rpg/wave/attack/spell6.wav" id="3_0mpkw"]
 [ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="3_dyjk4"]
-[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_pll2f"]
+[ext_resource type="Script" path="res://Scenes/Weapon/Upgrade.gd" id="4_pll2f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l8tt"]
 atlas = ExtResource("3_dyjk4")

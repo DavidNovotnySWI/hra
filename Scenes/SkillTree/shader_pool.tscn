@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh4vwwve55p4t"]
 
-[ext_resource type="Script" path="res://Scenes/shader_pool.gd" id="1_xkv45"]
+[ext_resource type="Script" path="res://Scenes/SkillTree/shader_pool.gd" id="1_xkv45"]
 [ext_resource type="Material" uid="uid://cenmqirvt5vwh" path="res://shaders/Burn.tres" id="2_77jut"]
 [ext_resource type="Material" uid="uid://b0lpmitklcm6s" path="res://shaders/RainBow.tres" id="3_lcpms"]
 

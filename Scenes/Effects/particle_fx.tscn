@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://diycqypq77i8o"]
 
-[ext_resource type="Script" path="res://Scenes/particle_fx.gd" id="1_5ofke"]
+[ext_resource type="Script" path="res://Scenes/Effects/particle_fx.gd" id="1_5ofke"]
 
 [node name="ParticleFX" type="Node2D"]
 script = ExtResource("1_5ofke")

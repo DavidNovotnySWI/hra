@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bo8mfycca14s4"]
 
 [ext_resource type="Texture2D" uid="uid://b3hn54iwpcjhu" path="res://assets/guns/fa403.png" id="1_52o16"]
-[ext_resource type="Script" path="res://Scenes/option_slot.gd" id="2_55qyq"]
+[ext_resource type="Script" path="res://Scenes/Upgrades/option_slot.gd" id="2_55qyq"]
 [ext_resource type="Texture2D" uid="uid://bmqb5qg0q4w7t" path="res://assets/GUI.png" id="3_78gxo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1xow"]

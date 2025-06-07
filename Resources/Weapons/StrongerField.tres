@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DamagingArea" load_steps=5 format=3 uid="uid://x58iixyb27p4"]
 
-[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/projectile.tscn" id="1_2squ0"]
-[ext_resource type="Script" path="res://Scenes/DamagingArea.gd" id="2_nh0dw"]
+[ext_resource type="PackedScene" uid="uid://rxaqqrxqq8ri" path="res://Scenes/Weapon/projectile.tscn" id="1_2squ0"]
+[ext_resource type="Script" path="res://Scenes/Weapon/DamagingArea.gd" id="2_nh0dw"]
 [ext_resource type="Texture2D" uid="uid://g4qpkavwr7gv" path="res://assets/aura_red.png" id="3_3sgfg"]
-[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_qlkyg"]
+[ext_resource type="Script" path="res://Scenes/Weapon/Upgrade.gd" id="4_qlkyg"]
 
 [resource]
 script = ExtResource("2_nh0dw")

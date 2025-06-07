@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://bmgdxfol3g0ft"]
 
-[ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_wsr2o"]
-[ext_resource type="PackedScene" uid="uid://bcjtvoqdtvut5" path="res://Scenes/enemy.tscn" id="2_sn55h"]
-[ext_resource type="Script" path="res://Scenes/EnemyType.gd" id="3_42fak"]
+[ext_resource type="Script" path="res://Scenes/Enemy/spawner.gd" id="1_wsr2o"]
+[ext_resource type="PackedScene" uid="uid://bcjtvoqdtvut5" path="res://Scenes/Enemy/enemy.tscn" id="2_sn55h"]
+[ext_resource type="Script" path="res://Scenes/Enemy/EnemyType.gd" id="3_42fak"]
 [ext_resource type="Resource" uid="uid://pmau01ny2iaw" path="res://Resources/Enemies/Cube.tres" id="4_fi2id"]
 [ext_resource type="Resource" uid="uid://dh3jxfcytiqra" path="res://Resources/Enemies/Eye.tres" id="5_q6btj"]
 [ext_resource type="Resource" uid="uid://ddexu76ipsi2e" path="res://Resources/Enemies/EyeLegs.tres" id="6_h81e2"]
 [ext_resource type="Resource" uid="uid://bhli5qu07p2tg" path="res://Resources/Enemies/Ghost.tres" id="7_yrmr4"]
 [ext_resource type="Resource" uid="uid://dxrc471wgw21u" path="res://Resources/Enemies/Triple.tres" id="8_5ni38"]
-[ext_resource type="PackedScene" uid="uid://dxwslqh2ywj54" path="res://Scenes/destructible.tscn" id="9_561c8"]
+[ext_resource type="PackedScene" uid="uid://dxwslqh2ywj54" path="res://Scenes/Destructible/destructible.tscn" id="9_561c8"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_wsr2o")
