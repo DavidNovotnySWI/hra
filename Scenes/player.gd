@@ -54,7 +54,7 @@ var nearest_enemy_distance : float = 150 + area
 var level : int = 1:
 	set(value):
 		level = value
-		%Level.text = str(value)
+		%Level.text = "LVL " + str(value)
 		%Options.show_options()
 		SoundManager.play_sfx(lvl_up_sound)
 		if level == 2:
@@ -74,7 +74,7 @@ var distance_in_pixel : float
 var gold : int = 0:
 	set(value):
 		gold = value
-		%Gold.text = "Gold: " + str(value)
+		%Gold.text = str(value)
 	
 var XP : int = 0:
 	set(value):
@@ -84,6 +84,8 @@ var total_XP : int = 0
 
 
 func _ready():
+	add_to_group("player")
+
 	Persistence.gain_bonus_stats(self)
  
 func _physics_process(delta):

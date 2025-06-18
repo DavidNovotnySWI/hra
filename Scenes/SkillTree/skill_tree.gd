@@ -43,5 +43,22 @@ func get_total_stats():
 		for upgrade in branch.get_children():
 			if upgrade.enabled:
 				add_stats(upgrade.skill.stats)
+	# Ulož jen bonusy ze skillů (ne výchozí hodnoty)
 	Persistence.bonus_stats = total_stat
+
+	# Připrav součet základních hodnot pro zobrazení
+	var display_stats := Stats.new()
+	display_stats.max_health = total_stat.max_health + 100
+	display_stats.recovery = total_stat.recovery + 0
+	display_stats.armor = total_stat.armor + 0
+	display_stats.movement_speed = total_stat.movement_speed + 150
+	display_stats.might = total_stat.might + 1.5
+	display_stats.area = total_stat.area + 0
+	display_stats.magnet = total_stat.magnet + 0
+	display_stats.growth = total_stat.growth + 1
+
+	# Zobraz ve stats labelu
+	var stats_label := get_tree().current_scene.find_child("Stats", true, false)
+	if stats_label and stats_label.has_method("update_stats_display"):
+		stats_label.update_stats_display(display_stats)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://eq1ikkjd2ymy"]
+[gd_scene load_steps=70 format=3 uid="uid://eq1ikkjd2ymy"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_8ehci"]
 [ext_resource type="PackedScene" uid="uid://disbhycexre2v" path="res://Scenes/SkillTree/upgrade.tscn" id="1_b2xfp"]
@@ -9,6 +9,14 @@
 [ext_resource type="Script" path="res://Scenes/UI_Gold.gd" id="5_inwbj"]
 [ext_resource type="Texture2D" uid="uid://cp1bo7kltgtqr" path="res://assets/64x64.png" id="6_pqrm3"]
 [ext_resource type="Script" path="res://Scenes/start.gd" id="8_e22gj"]
+[ext_resource type="LabelSettings" uid="uid://dykjtfery0voa" path="res://22px.tres" id="8_krx56"]
+[ext_resource type="Script" path="res://Scenes/UI_Stats.gd" id="9_1euq1"]
+[ext_resource type="Texture2D" uid="uid://bsr3r156i84m4" path="res://game.png" id="11_cndd7"]
+[ext_resource type="StyleBox" uid="uid://denqiuvmcuel5" path="res://Scenes/styles/button_focus.tres" id="12_k5ee2"]
+[ext_resource type="StyleBox" uid="uid://dhfty6mrxm4uu" path="res://Scenes/styles/button_hover_pressed.tres" id="13_fbebx"]
+[ext_resource type="StyleBox" uid="uid://ustpn3kkfkr" path="res://Scenes/styles/button_hover.tres" id="14_h82vn"]
+[ext_resource type="StyleBox" uid="uid://cjby5rjbefj1f" path="res://Scenes/styles/button_pressed.tres" id="15_c8lm0"]
+[ext_resource type="StyleBox" uid="uid://dqqll361l1w1n" path="res://Scenes/styles/button_normal.tres" id="16_s3ymb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlbld"]
 content_margin_left = 4.0
@@ -220,6 +228,26 @@ cache/0/5/0/descent = 0.0
 cache/0/5/0/underline_position = 0.0
 cache/0/5/0/underline_thickness = 0.0
 cache/0/5/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/72/0/ascent = 0.0
+cache/0/72/0/descent = 0.0
+cache/0/72/0/underline_position = 0.0
+cache/0/72/0/underline_thickness = 0.0
+cache/0/72/0/scale = 1.0
+cache/0/82/0/ascent = 0.0
+cache/0/82/0/descent = 0.0
+cache/0/82/0/underline_position = 0.0
+cache/0/82/0/underline_thickness = 0.0
+cache/0/82/0/scale = 1.0
 
 [sub_resource type="Theme" id="Theme_4hfoj"]
 default_font = SubResource("FontFile_62j8u")
@@ -246,6 +274,67 @@ Button/styles/focus = SubResource("StyleBoxFlat_a0eln")
 Button/styles/hover = SubResource("StyleBoxFlat_uvk0r")
 Button/styles/normal = SubResource("StyleBoxFlat_uk8y4")
 Button/styles/pressed = SubResource("StyleBoxFlat_awkyv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvvko"]
+bg_color = Color(0.598525, 0.598525, 0.598524, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 175
+corner_radius_top_right = 175
+corner_radius_bottom_right = 175
+corner_radius_bottom_left = 175
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwsvl"]
+bg_color = Color(1, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 165
+corner_radius_top_right = 165
+corner_radius_bottom_right = 165
+corner_radius_bottom_left = 165
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwdhp"]
+bg_color = Color(0.598525, 0.598525, 0.598524, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phex5"]
+bg_color = Color(0.298039, 0.298039, 0.298039, 1)
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwaue"]
+bg_color = Color(0.298039, 0.298039, 0.298039, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
 
 [sub_resource type="Resource" id="Resource_e412d"]
 script = ExtResource("3_hwire")
@@ -523,16 +612,40 @@ texture = SubResource("AtlasTexture_1fx6b")
 cost = 1000
 stats = SubResource("Resource_csr75")
 
-[sub_resource type="Curve" id="Curve_jhn0r"]
-_data = [Vector2(0, 0.958019), 0.0, 0.0, 0, 0, Vector2(0.980609, 0.020452), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="LabelSettings" id="LabelSettings_kcs80"]
+font_size = 32
+outline_size = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_j0bg2"]
-curve = SubResource("Curve_jhn0r")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyifp"]
+bg_color = Color(0.539663, 0.539664, 0.539663, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq0hy"]
-texture = SubResource("CurveTexture_j0bg2")
-modulate_color = Color(0.183405, 0.145227, 0.735897, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ja08"]
+bg_color = Color(0.298039, 0.298039, 0.298039, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_jcacs"]
+font_size = 90
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 30
+shadow_color = Color(1, 1, 1, 1)
+shadow_offset = Vector2(5, 5)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -543,6 +656,129 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_4hfoj")
 script = ExtResource("1_8ehci")
+
+[node name="Panel5" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dvvko")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -162.5
+offset_right = 162.5
+offset_bottom = 162.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gwsvl")
+
+[node name="Panel4" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iwdhp")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_phex5")
+
+[node name="Panel" type="Panel" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -231.0
+offset_right = 32.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kwaue")
+
+[node name="Panel" type="Panel" parent="Panel3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 231.0
+offset_top = 98.5
+offset_right = 295.0
+offset_bottom = 299.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_kwaue")
+
+[node name="Panel" type="Panel" parent="Panel3/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 231.0
+offset_top = 98.5
+offset_right = 295.0
+offset_bottom = 299.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_kwaue")
+
+[node name="Panel" type="Panel" parent="Panel3/Panel/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 231.0
+offset_top = 98.5
+offset_right = 295.0
+offset_bottom = 299.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_kwaue")
 
 [node name="SkillTree" type="Panel" parent="."]
 layout_mode = 1
@@ -569,20 +805,20 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -268.0
-offset_right = -228.0
+offset_left = -50.0
+offset_right = -10.0
 skill = SubResource("Resource_l1ine")
 
 [node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -340.0
-offset_right = -300.0
+offset_left = -125.0
+offset_right = -85.0
 skill = SubResource("Resource_mcrnb")
 
 [node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -404.0
-offset_right = -364.0
+offset_left = -200.0
+offset_right = -160.0
 skill = SubResource("Resource_roj42")
 
 [node name="Armor" type="Control" parent="SkillTree"]
@@ -601,26 +837,20 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -20.0
-offset_top = -88.0
-offset_right = 20.0
-offset_bottom = -48.0
+offset_top = -50.0
+offset_bottom = -10.0
 skill = SubResource("Resource_hbjms")
 
 [node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -20.0
-offset_top = -144.0
-offset_right = 20.0
-offset_bottom = -104.0
+offset_top = -125.0
+offset_bottom = -85.0
 skill = SubResource("Resource_ygsoj")
 
 [node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -20.0
-offset_top = -208.0
-offset_right = 20.0
-offset_bottom = -168.0
+offset_top = -200.0
+offset_bottom = -160.0
 skill = SubResource("Resource_po8qm")
 
 [node name="Recovery" type="Control" parent="SkillTree"]
@@ -639,20 +869,20 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = 68.0
-offset_right = 108.0
+offset_left = 50.0
+offset_right = 90.0
 skill = SubResource("Resource_3v43i")
 
 [node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = 124.0
-offset_right = 164.0
+offset_left = 125.0
+offset_right = 165.0
 skill = SubResource("Resource_mq246")
 
 [node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = 180.0
-offset_right = 220.0
+offset_left = 200.0
+offset_right = 240.0
 skill = SubResource("Resource_4iitp")
 
 [node name="Movement speed" type="Control" parent="SkillTree"]
@@ -671,36 +901,92 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Movement speed" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 48.0
-offset_right = 28.0
-offset_bottom = 88.0
+offset_top = 50.0
+offset_bottom = 90.0
 skill = SubResource("Resource_obgur")
 
 [node name="Upgrade2" parent="SkillTree/Movement speed" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 104.0
-offset_right = 28.0
-offset_bottom = 144.0
+offset_top = 125.0
+offset_bottom = 165.0
 skill = SubResource("Resource_8lngx")
 
 [node name="Upgrade3" parent="SkillTree/Movement speed" instance=ExtResource("1_b2xfp")]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 160.0
-offset_right = 28.0
-offset_bottom = 200.0
+offset_top = 200.0
+offset_bottom = 240.0
 skill = SubResource("Resource_l67o1")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.5
+offset_top = 32.0
+offset_right = 75.5
+offset_bottom = 76.0
+grow_horizontal = 2
+text = "SKILL TREE"
+label_settings = SubResource("LabelSettings_kcs80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 997.0
+offset_top = 25.0
+offset_right = -11.0
+offset_bottom = -579.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qyifp")
+
 [node name="Gold" type="Label" parent="."]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 24.0
-offset_right = 1128.0
-offset_bottom = 64.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
+offset_top = 32.0
+offset_right = -20.0
+offset_bottom = 72.0
+grow_horizontal = 0
+label_settings = ExtResource("8_krx56")
 horizontal_alignment = 2
 script = ExtResource("5_inwbj")
+
+[node name="Panel6" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 997.0
+offset_top = 69.0
+offset_right = -11.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ja08")
+
+[node name="Stats" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
+offset_top = 72.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+text = "
+"
+label_settings = ExtResource("8_krx56")
+horizontal_alignment = 2
+script = ExtResource("9_1euq1")
 
 [node name="Menu" type="Panel" parent="."]
 visible = false
@@ -710,7 +996,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_eq0hy")
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_cndd7")
 
 [node name="Start" type="Button" parent="Menu"]
 layout_mode = 1
@@ -720,32 +1014,70 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
-offset_top = -192.0
+offset_top = -304.0
 offset_right = 96.0
-offset_bottom = -105.0
+offset_bottom = -217.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.133333, 0.207843, 0.490196, 1)
 theme_override_font_sizes/font_size = 32
-text = "Start"
+theme_override_styles/focus = ExtResource("12_k5ee2")
+theme_override_styles/hover_pressed = ExtResource("13_fbebx")
+theme_override_styles/hover = ExtResource("14_h82vn")
+theme_override_styles/pressed = ExtResource("15_c8lm0")
+theme_override_styles/normal = ExtResource("16_s3ymb")
+text = "START"
 script = ExtResource("8_e22gj")
 
 [node name="Upgrades" type="Button" parent="Menu"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 352.0
-offset_right = 672.0
-offset_bottom = 440.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -190.0
+offset_right = 96.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.132237, 0.208822, 0.490052, 1)
 theme_override_font_sizes/font_size = 30
-text = "Upgrades"
+theme_override_styles/focus = ExtResource("12_k5ee2")
+theme_override_styles/hover_pressed = ExtResource("13_fbebx")
+theme_override_styles/hover = ExtResource("14_h82vn")
+theme_override_styles/pressed = ExtResource("15_c8lm0")
+theme_override_styles/normal = ExtResource("16_s3ymb")
+text = "UPGRADES"
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -214.0
+offset_top = 99.0
+offset_right = 202.0
+offset_bottom = 196.0
+grow_horizontal = 2
+text = "SHADOW LOOP"
+label_settings = SubResource("LabelSettings_jcacs")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
 offset_left = 32.0
 offset_top = 32.0
-offset_right = 114.0
+offset_right = 144.0
 offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.133333, 0.207843, 0.490196, 1)
 theme_override_font_sizes/font_size = 32
-text = "Back"
+theme_override_styles/focus = ExtResource("12_k5ee2")
+theme_override_styles/hover_pressed = ExtResource("13_fbebx")
+theme_override_styles/hover = ExtResource("14_h82vn")
+theme_override_styles/pressed = ExtResource("15_c8lm0")
+theme_override_styles/normal = ExtResource("16_s3ymb")
+text = "BACK"
 
 [connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
 [connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]

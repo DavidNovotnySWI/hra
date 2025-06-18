@@ -18,23 +18,45 @@ destructible = ExtResource("9_561c8")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-offset_left = 1087.0
-offset_top = 97.0
-offset_right = 1127.0
-offset_bottom = 137.0
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 0
 
-[node name="Minute" type="Label" parent="UI/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -227.0
+offset_top = 74.0
+offset_right = -11.0
+offset_bottom = 110.0
+grow_horizontal = 0
+
+[node name="Label3" type="Label" parent="UI/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Game time: "
+
+[node name="Minute" type="Label" parent="UI/Control/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "0"
 
-[node name="Label2" type="Label" parent="UI/HBoxContainer"]
+[node name="Label2" type="Label" parent="UI/Control/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = ":"
 
-[node name="Second" type="Label" parent="UI/HBoxContainer"]
+[node name="Second" type="Label" parent="UI/Control/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "00"
 
 [node name="Timer" type="Timer" parent="."]

@@ -8,18 +8,26 @@ extends Node2D
 var distance : float = 400
 var can_spawn: bool = true
  
-var minute : int:
+func _ready():
+	add_to_group("spawner")
+
+var _minute := 0
+var minute: int:
+	get: return _minute
 	set(value):
-		minute = value
+		_minute = value
 		%Minute.text = str(value)
- 
-var second : int:
+
+var _second := 0
+var second: int:
+	get: return _second
 	set(value):
-		second = value
-		if second >= 30:
-			second -= 30
+		_second = value
+		if _second >= 30:
+			_second -= 30
 			minute += 1
-		%Second.text = str(second).lpad(2,'0')
+		%Second.text = str(_second).lpad(2, '0')
+
 		
 func _physics_process(_delta):
 	if get_tree().get_node_count_in_group("Enemy") <700:

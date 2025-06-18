@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dkt7spcbw3ubw"]
+[gd_scene load_steps=44 format=3 uid="uid://dkt7spcbw3ubw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dgp2d"]
 [ext_resource type="AudioStream" uid="uid://bf4ho0t8c04h6" path="res://assets/sound/rpg/rpg/wave/expressions/hurt2.wav" id="2_q06v1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c4ehd05fj2dlw" path="res://Scenes/Upgrades/passive_slot.tscn" id="7_6p7tc"]
 [ext_resource type="Resource" uid="uid://d0fadb26md7tw" path="res://Resources/Weapons/ForceField.tres" id="8_5tmgx"]
 [ext_resource type="Script" path="res://Scenes/back.gd" id="12_bj7xl"]
+[ext_resource type="Script" path="res://Scenes/death_screen.gd" id="13_ofbxx"]
 [ext_resource type="Texture2D" uid="uid://6chbxdxyrq8o" path="res://assets/character/character.png" id="16_i2k84"]
 
 [sub_resource type="Gradient" id="Gradient_iccrq"]
@@ -199,15 +200,30 @@ process_material = SubResource("ParticleProcessMaterial_yivi0")
 texture = ExtResource("2_r0tpp")
 lifetime = 1.5
 
-[node name="Gold" type="Label" parent="UI"]
+[node name="Control3" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Gold" type="Label" parent="UI/Control3"]
 unique_name_in_owner = true
-offset_left = 868.0
-offset_top = 80.0
-offset_right = 936.0
-offset_bottom = 103.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -310.0
+offset_top = 73.0
+offset_right = -239.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
 text = "0"
 
-[node name="gold_Icon" type="NinePatchRect" parent="UI/Gold"]
+[node name="gold_Icon" type="NinePatchRect" parent="UI/Control3/Gold"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -350,24 +366,38 @@ layout_mode = 2
 [node name="PassiveSlot8" parent="UI/PassiveItems" instance=ExtResource("7_6p7tc")]
 layout_mode = 2
 
-[node name="XP" type="TextureProgressBar" parent="UI"]
+[node name="Control2" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="XP" type="TextureProgressBar" parent="UI/Control2"]
 unique_name_in_owner = true
-offset_left = 822.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -355.0
 offset_top = 41.0
-offset_right = 874.0
+offset_right = -303.0
 offset_bottom = 49.0
+grow_horizontal = 0
 scale = Vector2(5, 4)
 max_value = 10.0
 texture_under = SubResource("AtlasTexture_yyv71")
 texture_progress = SubResource("AtlasTexture_u840s")
 
-[node name="Level" type="Label" parent="UI/XP"]
+[node name="Level" type="Label" parent="UI/Control2/XP"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 36.2
-offset_top = 9.25
-offset_right = 102.2
-offset_bottom = 45.25
+offset_left = 55.3998
+offset_top = 0.25
+offset_right = 121.4
+offset_bottom = 36.25
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 26
 text = "LVL 1"
@@ -394,20 +424,40 @@ passive_items = NodePath("../PassiveItems")
 particles = NodePath("../LevelUPAnimation")
 panel = NodePath("../Panel")
 
-[node name="Back" type="Button" parent="UI"]
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
 process_mode = 3
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -103.5
-offset_top = -45.0
-offset_right = 103.5
-offset_bottom = 45.0
+offset_left = -150.0
+offset_top = -69.5
+offset_right = 150.0
+offset_bottom = 69.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("13_ofbxx")
+
+[node name="DeathPanel" type="VBoxContainer" parent="UI/PanelContainer"]
+process_mode = 3
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="UI/PanelContainer/DeathPanel"]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="UI/PanelContainer/DeathPanel"]
+layout_mode = 2
+
+[node name="GoldLabel" type="Label" parent="UI/PanelContainer/DeathPanel"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="UI/PanelContainer/DeathPanel"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="UI/PanelContainer/DeathPanel"]
+process_mode = 3
+layout_mode = 2
 text = "Back to Menu"
 script = ExtResource("12_bj7xl")
 
@@ -429,9 +479,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -169.0
+offset_left = -193.0
 offset_top = -12.0
-offset_right = -112.0
+offset_right = -136.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -481,7 +531,7 @@ unique_name_in_owner = true
 position = Vector2(-93, -4)
 shape = SubResource("CircleShape2D_umqv7")
 
-[connection signal="pressed" from="UI/Back" to="UI/Back" method="_on_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/DeathPanel/Back" to="UI/PanelContainer/DeathPanel/Back" method="_on_pressed"]
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Magnet" to="." method="_on_magnet_area_entered"]
